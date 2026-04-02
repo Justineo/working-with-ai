@@ -203,11 +203,11 @@ code { font-family:var(--font-mono); background:rgba(124,106,239,0.15); padding:
 .comp-row.current { background:rgba(239,106,154,0.08); border-radius:6px; padding:.2rem .4rem; margin:-.2rem -.4rem; }
 .comp-format { font-family:var(--font-mono); font-weight:700; color:var(--accent3); text-align:right; }
 .comp-bar { height:7px; border-radius:3px; min-width:8px; }
-.jpeg-demo-overlay { position:relative; z-index:2; background:var(--bg); padding:2rem 3rem; display:flex; flex-direction:column; align-items:center; margin-top:-12rem; padding-top:3rem; }
-.jpeg-demo { display:flex; align-items:center; gap:2rem; }
-.jpeg-demo canvas { border-radius:8px; border:2px solid var(--card-border); image-rendering:auto; width:420px; height:280px; }
-.jpeg-slider-wrap { display:flex; flex-direction:column; gap:.4rem; }
-.jpeg-label-fixed { font-size:.82rem; min-width:320px; font-variant-numeric:tabular-nums; }
+.jpeg-demo-overlay { position:relative; z-index:2; width:min(100%, 900px); margin-top:.75rem; display:flex; flex-direction:column; align-items:center; gap:1rem; }
+.jpeg-demo { display:flex; align-items:center; justify-content:center; gap:1.5rem; flex-wrap:wrap; width:100%; }
+.jpeg-demo canvas { border-radius:8px; border:2px solid var(--card-border); image-rendering:auto; width:min(36vw, 380px); max-width:100%; height:auto; aspect-ratio:3 / 2; }
+.jpeg-slider-wrap { display:flex; flex-direction:column; gap:.4rem; flex:0 0 320px; width:320px; max-width:100%; min-width:0; }
+.jpeg-label-fixed { font-size:.82rem; width:100%; font-variant-numeric:tabular-nums; white-space:nowrap; }
 input[type="range"] { -webkit-appearance:none; width:230px; height:4px; border-radius:2px; background:linear-gradient(90deg,var(--accent2),var(--accent),var(--accent3)); outline:none; }
 input[type="range"]::-webkit-slider-thumb { -webkit-appearance:none; width:16px; height:16px; border-radius:50%; background:white; cursor:pointer; box-shadow:0 0 6px rgba(124,106,239,0.5); }
 
@@ -359,7 +359,7 @@ body.overview-active .mobile-nav-overview { color:var(--accent); }
   .file-name { font-size:clamp(1.8rem,8vw,3.5rem); }
   .compression-levels { max-width:100%; }
   .comp-row { grid-template-columns:2.5rem 1fr auto; gap:.4rem; font-size:.72rem; }
-  .jpeg-demo-overlay { margin-top:-4rem; padding:1rem .5rem; }
+  .jpeg-demo-overlay { margin-top:.5rem; padding:0; gap:.75rem; }
   .jpeg-demo { flex-direction:column; align-items:center; gap:1rem; }
   .jpeg-demo canvas { width:85vw; height:56vw; max-width:360px; max-height:240px; }
   .jpeg-slider-wrap { align-items:center; width:100%; }
