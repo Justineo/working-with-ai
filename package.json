@@ -9,7 +9,7 @@
     "preview": "vp preview"
   },
   "devDependencies": {
-    "typescript": "~6.0.0",
+    "typescript": "~6.0.3",
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vite-plus": "latest"
   },
