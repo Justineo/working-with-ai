@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "@lobehub/icons": "^5.0.1",
-    "@lobehub/icons-static-svg": "^1.83.0"
+    "@lobehub/icons": "^5.18.0",
+    "@lobehub/icons-static-svg": "^1.95.0"
   }
 }

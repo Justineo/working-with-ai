@@ -167,11 +167,11 @@ importers:
   .:
     dependencies:
       '@lobehub/icons':
-        specifier: ^5.0.1
-        version: 5.2.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+        specifier: ^5.18.0
+        version: 5.21.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@lobehub/icons-static-svg':
-        specifier: ^1.83.0
-        version: 1.84.0
+        specifier: ^1.95.0
+        version: 1.95.1
     devDependencies:
       typescript:
         specifier: ~6.0.3
@@ -440,9 +440,6 @@ packages:
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
 
-  '@jridgewell/sourcemap-codec@1.5.5':
-    resolution: {integrity: sha512-cYQ9310grqxueWbl+WuIUIaiUaDcj7WOq5fVhEljNVgRfOUhY9fy2zTvfoqWsnebh8Sl70VScFbICvJnLKB0Og==}
-
   '@jridgewell/sourcemap-codec@1.6.0':
     resolution: {integrity: sha512-T7jf+5zgsZHwNJ4lvQ7/aezbyk0nNX+zJVWpmHA7VYsEx7a7qr5Rg5IbtJFqkgze5Y2sruq1RUY8Q837Od7iFw==}
 
@@ -464,11 +461,11 @@ packages:
       react: ^19.0.0
       react-dom: ^19.0.0
 
-  '@lobehub/icons-static-svg@1.84.0':
-    resolution: {integrity: sha512-4agZ/xGsf0bTXSofvWHZJev+TTfn9MFvV7x+feYvVTNCmmH9u8ZHxZOpKRU+9+vFZD/QTjfWne/nD1/kwChqhA==}
+  '@lobehub/icons-static-svg@1.95.1':
+    resolution: {integrity: sha512-Hw7EPPgVnC4NZLXBfTNJG6hyQgqECfUPC11VVXodPSr1aebKcFxDZlSpxhWwYNdCc6bhxps/x5TtXoPmfKH2ag==}
 
-  '@lobehub/icons@5.2.0':
-    resolution: {integrity: sha512-dDp/5wQWuhfAItrrdXmIYPQMFFqlE+0tk3EplivEm3HDf33W4al+7Y815y/MPIACHhg9fNCu8+HKo0Sn9JVOaw==}
+  '@lobehub/icons@5.21.0':
+    resolution: {integrity: sha512-cp5us20CKCD5BGdlOCF6erLY70mEtDOgan46Zsjnq9hqY2kNZ1WvWgM4uKi8TcLndmNSvNR4hUIeXf7hoYgtKw==}
     peerDependencies:
       '@lobehub/ui': ^5.0.0
       antd: ^6.1.1
@@ -2191,6 +2188,9 @@ packages:
   es-toolkit@1.45.1:
     resolution: {integrity: sha512-/jhoOj/Fx+A+IIyDNOvO3TItGmlMKhtX8ISAHKE90c4b/k1tqaqEZ+uUqfpU8DMnW5cgNJv606zS55jGvza0Xw==}
 
+  es-toolkit@1.52.0:
+    resolution: {integrity: sha512-XTNEJQh1tY1ZJVcf6ayP/2n4ZPyaHlW2FWs7xvw5ddPuhUVjLD3olQVQS7kf58JbAB48iL0uL/jerTrjtV3lDA==}
+
   esast-util-from-estree@2.0.0:
     resolution: {integrity: sha512-4CyanoAudUSBAn5K13H4JhsMH6L9ZP7XbLVe/dKybkxMO7eDyLsT8UHl9TRNrU2Gr9nz+FovfSIjuXWJ81uVwQ==}
 
@@ -3894,19 +3894,17 @@ snapshots:
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
       '@jridgewell/trace-mapping': 0.3.31
 
   '@jridgewell/resolve-uri@3.1.2': {}
-
-  '@jridgewell/sourcemap-codec@1.5.5': {}
 
   '@jridgewell/sourcemap-codec@1.6.0': {}
 
   '@jridgewell/trace-mapping@0.3.31':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.5
+      '@jridgewell/sourcemap-codec': 1.6.0
 
   '@lit-labs/ssr-dom-shim@1.5.1': {}
 
@@ -3931,13 +3929,14 @@ snapshots:
       - antd
       - supports-color
 
-  '@lobehub/icons-static-svg@1.84.0': {}
+  '@lobehub/icons-static-svg@1.95.1': {}
 
-  '@lobehub/icons@5.2.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@lobehub/icons@5.21.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
-      '@lobehub/ui': 5.6.0(@lobehub/fluent-emoji@4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(@lobehub/icons@5.2.0)(@types/mdast@4.0.4)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(micromark-util-types@2.0.2)(micromark@4.0.2)(motion@12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@lobehub/ui': 5.6.0(@lobehub/fluent-emoji@4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(@lobehub/icons@5.21.0)(@types/mdast@4.0.4)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(micromark-util-types@2.0.2)(micromark@4.0.2)(motion@12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       antd: 6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       antd-style: 4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      es-toolkit: 1.52.0
       lucide-react: 0.469.0(react@19.2.4)
       polished: 4.3.1
       react: 19.2.4
@@ -3946,7 +3945,7 @@ snapshots:
       - '@types/react'
       - supports-color
 
-  '@lobehub/ui@5.6.0(@lobehub/fluent-emoji@4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(@lobehub/icons@5.2.0)(@types/mdast@4.0.4)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(micromark-util-types@2.0.2)(micromark@4.0.2)(motion@12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
+  '@lobehub/ui@5.6.0(@lobehub/fluent-emoji@4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(@lobehub/icons@5.21.0)(@types/mdast@4.0.4)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(micromark-util-types@2.0.2)(micromark@4.0.2)(motion@12.38.0(@emotion/is-prop-valid@1.4.0)(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)':
     dependencies:
       '@ant-design/cssinjs': 2.1.2(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@base-ui/react': 1.0.0(@types/react@19.2.14)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -3960,7 +3959,7 @@ snapshots:
       '@floating-ui/react': 0.27.19(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@giscus/react': 3.1.0(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@lobehub/fluent-emoji': 4.1.0(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
-      '@lobehub/icons': 5.2.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
+      '@lobehub/icons': 5.21.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@mdx-js/mdx': 3.1.1
       '@mdx-js/react': 3.1.1(@types/react@19.2.14)(react@19.2.4)
       '@pierre/diffs': 1.1.7(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -5636,6 +5635,8 @@ snapshots:
   es-module-lexer@2.3.2: {}
 
   es-toolkit@1.45.1: {}
+
+  es-toolkit@1.52.0: {}
 
   esast-util-from-estree@2.0.0:
     dependencies:
