@@ -167,10 +167,10 @@ importers:
   .:
     dependencies:
       '@lobehub/icons':
-        specifier: ^5.18.0
+        specifier: ^5.21.0
         version: 5.21.0(@lobehub/ui@5.6.0)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@lobehub/icons-static-svg':
-        specifier: ^1.95.0
+        specifier: ^1.95.1
         version: 1.95.1
     devDependencies:
       typescript:
