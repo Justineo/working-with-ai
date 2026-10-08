@@ -22,6 +22,6 @@
   },
   "dependencies": {
     "@lobehub/icons": "^5.18.0",
-    "@lobehub/icons-static-svg": "^1.95.0"
+    "@lobehub/icons-static-svg": "^1.95.1"
   }
 }
