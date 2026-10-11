@@ -13,7 +13,7 @@
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vite-plus": "latest"
   },
-  "packageManager": "pnpm@12.5.1",
+  "packageManager": "pnpm@12.9.1",
   "pnpm": {
     "overrides": {
       "vite": "npm:@voidzero-dev/vite-plus-core@latest",
@@ -21,7 +21,7 @@
     }
   },
   "dependencies": {
-    "@lobehub/icons": "^5.18.0",
+    "@lobehub/icons": "^5.23.0",
     "@lobehub/icons-static-svg": "^1.95.0"
   }
 }
