@@ -8,6 +8,10 @@
     "build": "tsc && vp build",
     "preview": "vp preview"
   },
+  "dependencies": {
+    "@lobehub/icons": "^5.23.0",
+    "@lobehub/icons-static-svg": "^1.95.1"
+  },
   "devDependencies": {
     "typescript": "~7.0.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
@@ -19,9 +23,5 @@
       "vite": "npm:@voidzero-dev/vite-plus-core@latest",
       "vitest": "npm:@voidzero-dev/vite-plus-test@latest"
     }
-  },
-  "dependencies": {
-    "@lobehub/icons": "^5.23.0",
-    "@lobehub/icons-static-svg": "^1.95.0"
   }
 }
