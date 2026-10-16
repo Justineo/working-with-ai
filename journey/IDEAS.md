@@ -14,12 +14,14 @@
 ---
 
 #### 0. Title: Working with AI
+
 - 副标题：不是 best practice，是 real practice
 - 这个 slides 本身就是用 AI 做的（meta！）
 
 ---
 
 #### 1. knowledge.jpeg — LLM 是知识的有损压缩
+
 - 核心比喻：人类知识 = RAW，Wikipedia = PNG，LLM = JPEG
 - 模型越小 = 压缩率越高 = artifact 越多
 - hallucination = compression artifact（JPEG 马赛克）
@@ -30,6 +32,7 @@
 ---
 
 #### 2. 从 Google 到 LLM — query 到 intent 的认知迁移
+
 - 以前：精心构建 query，"python sort list reverse" → 得到一堆链接 → 自己筛选
 - 现在：表达意图，"我有一个嵌套的字典列表，想按第二层的 created_at 字段降序排列" → 直接得到结果
 - 类比：意图是一个高维向量，query 是它在搜索引擎语法上的投影（降维打击反过来了）
@@ -40,6 +43,7 @@
 ---
 
 #### 3. AI 的超能力：翻译
+
 - "翻译" 的广义定义——AI 最擅长的就是在不同表征之间转换
   - 自然语言 ↔ 自然语言（中 ↔ 英 ↔ 日 ↔ ...）
   - 编程语言 ↔ 编程语言（Python ↔ Rust ↔ Go ↔ ...）
@@ -52,6 +56,7 @@
 ---
 
 #### 4. Tab 的消亡 — 从补全到 Agent
+
 - 时间线：
   - 2023 新年：祝大家一路 tab 到底！
   - 2023 年中：等等，我好像不怎么按 tab 了……
@@ -64,6 +69,7 @@
 ---
 
 #### 5. AI 编程的自动驾驶等级
+
 - L0: 人写代码，人 review（石器时代）
 - L1: AI 补全，人写主体，人 review（Copilot tab 时代）
 - L2: AI 写代码，人 review（当前主流，Claude Code / Cursor）
@@ -77,6 +83,7 @@
 ---
 
 #### 6. Workflow: research → plan → implement → review
+
 - 不是一个线性流程，是一个 loop
 - research：让 AI 帮你理解背景、读代码、读文档
 - plan：跟 AI 对齐方案，而不是让它直接动手（重要！）
@@ -89,6 +96,7 @@
 ---
 
 #### 7. design.md — 用文档 distill 一个项目
+
 - 问题：大型项目，AI 读不完所有代码，context window 不够
 - 方案：写 design.md，把项目的核心架构、设计决策、约定俗成浓缩成文档
 - 效果：相当于给 AI 一个"项目简报"，它能更精准地工作
@@ -101,6 +109,7 @@
 ---
 
 #### 8. AI 味 vs 人味 — 平均脸理论
+
 - "AI 味"到底是什么？圆角、渐变、紫色、emoji 满天飞、"Let me help you with that"
 - 核心观点：AI 味 = 人味的平均值。就像"平均脸"——把所有人脸叠加，得到一张最"好看"但最没特色的脸
 - AI 产出的东西不丑，但无聊——因为它是所有训练数据的中位数
@@ -111,6 +120,7 @@
 ---
 
 #### 9. Token 中文名事件
+
 - 背景：官方要给 AI 术语定中文名
 - 吐槽：这翻译不太行啊
 - 我的建议——对标三大 AI 顶刊：
@@ -123,6 +133,7 @@
 ---
 
 #### 10. Claude 与龙虾 🦞
+
 - Claude 的名字梗：Claude → Claw'd → 有爪子的 → 🦞
 - 社区衍生：ClawdBot, OpenClaw
 - Fun fact：Anthropic 官方默默接受了这个 meme
@@ -132,6 +143,7 @@
 ---
 
 #### 11. Coding Agent = General-Purpose Agent
+
 - 认知升级：不要把 Claude Code / Cursor 只当"写代码的工具"
 - Coding agent 有文件系统访问、命令行、网络——这就是一个通用 agent
 - 案例：用 Claude Code 准备会议材料（就是这个 slides！）
@@ -143,6 +155,7 @@
 ---
 
 #### 12. Skill Issue
+
 - 当 AI 写出 bug 的时候，是 AI 的 skill issue 还是你的 prompt issue？
 - 通常是你的（残酷的事实）
 - "Garbage in, garbage out" 的 AI 版本
@@ -153,6 +166,7 @@
 ---
 
 #### 13. MCP vs CLI — 工具选择的哲学
+
 - MCP (Model Context Protocol)：标准化的 AI-工具连接方式
 - CLI：古老但强大，AI 通过命令行操作一切
 - 现实：CLI 更灵活，MCP 更规范
@@ -162,6 +176,7 @@
 ---
 
 #### 14. 生活中的 AI — Debunk Rumors
+
 - 不只是工作，生活中也离不开了
 - 辟谣：家人群里的"震惊！"文章，直接丢给 AI 分析
 - 育儿：该不该信某个育儿建议？
@@ -171,6 +186,7 @@
 ---
 
 #### 15. You're Absolutely Right 及其他 Memes
+
 - AI 的 sycophancy 问题："You're absolutely right"
 - 收集一些经典 meme：
   - "I apologize for the confusion"
@@ -183,6 +199,7 @@
 ---
 
 #### 16. 彩蛋：Emoji 猜电影
+
 - 互动环节！用 emoji 表达电影，让大家猜
 - 例子：🧙‍♂️💍🌋 = 指环王
 - 例子：🦁👑 = 狮子王
@@ -193,6 +210,7 @@
 ---
 
 #### 17. Meta 彩蛋：这个 Slides 本身
+
 - 开头或结尾揭示：这整个 slides 就是用 Claude Code 做的
 - 包括内容策划、视觉设计、代码实现
 - 就是对 "Coding Agent = General-Purpose Agent" 的最好证明

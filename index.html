@@ -6,48 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Working with AI</title>
     <style>
-      body { background: #0a0a0f; color: #e8e6e3; }
+      body {
+        background: #0a0a0f;
+        color: #e8e6e3;
+      }
       /* FOUC guard: keep app invisible until JS inits, suppress all transitions */
-      #app:not(.ready) { opacity: 0; }
+      #app:not(.ready) {
+        opacity: 0;
+      }
       #app:not(.ready) .slide,
-      #app:not(.ready) [data-f] { transition: none !important; }
+      #app:not(.ready) [data-f] {
+        transition: none !important;
+      }
     </style>
   </head>
   <body>
-    <div id="app" style="opacity:0">
-
+    <div id="app" style="opacity: 0">
       <!-- ============================== 0. Title ============================== -->
       <section class="slide slide-title" data-title="Working with AI">
         <div class="bg-grid"></div>
         <div class="floating-symbols">
-          <span style="left:10%;animation-delay:0s">🤖</span>
-          <span style="left:30%;animation-delay:4s">💻</span>
-          <span style="left:50%;animation-delay:8s">🧠</span>
-          <span style="left:70%;animation-delay:2s">⚡</span>
-          <span style="left:85%;animation-delay:6s">🦀</span>
+          <span style="left: 10%; animation-delay: 0s">🤖</span>
+          <span style="left: 30%; animation-delay: 4s">💻</span>
+          <span style="left: 50%; animation-delay: 8s">🧠</span>
+          <span style="left: 70%; animation-delay: 2s">⚡</span>
+          <span style="left: 85%; animation-delay: 6s">🦀</span>
         </div>
-        <div class="text-center" style="position:relative;z-index:1">
-          <div class="title-mega"><div class="title-carousel"><div class="title-carousel-track"><div class="gradient-text">Working</div><div class="gradient-text">Collaborating</div><div class="gradient-text">Playing</div><div class="gradient-text">Creating</div><div class="gradient-text">Thinking</div><div class="gradient-text">Working</div></div></div><span class="gradient-text">with AI</span></div>
+        <div class="text-center" style="position: relative; z-index: 1">
+          <div class="title-mega">
+            <div class="title-carousel">
+              <div class="title-carousel-track">
+                <div class="gradient-text">Working</div>
+                <div class="gradient-text">Collaborating</div>
+                <div class="gradient-text">Playing</div>
+                <div class="gradient-text">Creating</div>
+                <div class="gradient-text">Thinking</div>
+                <div class="gradient-text">Working</div>
+              </div>
+            </div>
+            <span class="gradient-text">with AI</span>
+          </div>
           <div class="subtitle cn">只是我自己的实践，no best practice</div>
-          <div class="cn dim mt-2" style="font-size:0.85rem">AI 进化速度太快，所有经验都只是暂时的<br>一切需要自己和 AI 磨合探索</div>
-          <div class="meta-badge">← → 翻页 · ↑ ↓ 步进 · ESC 总览 &nbsp;|&nbsp; 这个 slides 也是 AI 做的</div>
+          <div class="cn dim mt-2" style="font-size: 0.85rem">
+            AI 进化速度太快，所有经验都只是暂时的<br />一切需要自己和 AI 磨合探索
+          </div>
+          <div class="meta-badge">
+            ← → 翻页 · ↑ ↓ 步进 · ESC 总览 &nbsp;|&nbsp; 这个 slides 也是 AI 做的
+          </div>
         </div>
       </section>
 
       <!-- ============================== 1. Tab → Agent ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
-          <div class="title-large cn">从 <span class="mono"><span class="key-cap">⇥</span></span> 到 <span class="gradient-text">Agent</span></div>
+        <div class="flex-col gap-3" style="align-items: center">
+          <div class="title-large cn">
+            从 <span class="mono"><span class="key-cap">⇥</span></span> 到
+            <span class="gradient-text">Agent</span>
+          </div>
 
           <!-- Screenshots centered, second overlays first with fade -->
           <div class="moments-compare mt-2">
             <div class="moment-card" data-f="1">
               <img src="/moments-2025.jpg" alt="2025: 祝大家一路 tab 到底！" class="moments-img" />
-              <div class="dim cn" style="font-size:.8rem">2025.01.28</div>
+              <div class="dim cn" style="font-size: 0.8rem">2025.01.28</div>
             </div>
             <div class="moment-card moment-overlay" data-f="2">
               <img src="/moments-2026.jpg" alt="2026: tab 到底还是过于保守了" class="moments-img" />
-              <div class="dim cn" style="font-size:.8rem">2026.02.17</div>
+              <div class="dim cn" style="font-size: 0.8rem">2026.02.17</div>
             </div>
           </div>
 
@@ -57,15 +82,32 @@
               <div class="evo-content">
                 <div class="evo-title"><span class="key-cap small">⇥</span> Tab</div>
                 <div class="evo-desc cn">行内自动补全</div>
-                <div class="evo-tools"><span class="tool-pill"><img src="/icons/tabnine.png" class="tool-icon" alt="">TabNine</span> <span class="tool-pill"><img src="/icons/githubcopilot.svg" class="tool-icon invert" alt="">Copilot</span></div>
+                <div class="evo-tools">
+                  <span class="tool-pill"
+                    ><img src="/icons/tabnine.png" class="tool-icon" alt="" />TabNine</span
+                  >
+                  <span class="tool-pill"
+                    ><img
+                      src="/icons/githubcopilot.svg"
+                      class="tool-icon invert"
+                      alt=""
+                    />Copilot</span
+                  >
+                </div>
               </div>
             </div>
             <div class="evo-arrow" data-f="4">→</div>
             <div class="evo-step" data-f="4">
               <div class="evo-content">
-                <div class="evo-title"><span class="key-cap small">⇥</span><span class="key-cap small">⇥</span> Tab Tab</div>
+                <div class="evo-title">
+                  <span class="key-cap small">⇥</span><span class="key-cap small">⇥</span> Tab Tab
+                </div>
                 <div class="evo-desc cn">多插入点同时补全</div>
-                <div class="evo-tools"><span class="tool-pill"><img src="/icons/cursor.svg" class="tool-icon invert" alt="">Cursor</span></div>
+                <div class="evo-tools">
+                  <span class="tool-pill"
+                    ><img src="/icons/cursor.svg" class="tool-icon invert" alt="" />Cursor</span
+                  >
+                </div>
               </div>
             </div>
             <div class="evo-arrow" data-f="5">→</div>
@@ -74,9 +116,16 @@
                 <div class="evo-title">🤖 Agent</div>
                 <div class="evo-desc cn">你说目的地，AI 开车</div>
                 <div class="evo-tools">
-                  <span class="tool-pill"><img src="/icons/claudecode-color.svg" class="tool-icon" alt="">Claude Code</span>
-                  <span class="tool-pill"><img src="/icons/codex-color.svg" class="tool-icon" alt="">Codex</span>
-                  <span class="tool-pill"><img src="/icons/opencode.svg" class="tool-icon invert" alt="">OpenCode</span>
+                  <span class="tool-pill"
+                    ><img src="/icons/claudecode-color.svg" class="tool-icon" alt="" />Claude
+                    Code</span
+                  >
+                  <span class="tool-pill"
+                    ><img src="/icons/codex-color.svg" class="tool-icon" alt="" />Codex</span
+                  >
+                  <span class="tool-pill"
+                    ><img src="/icons/opencode.svg" class="tool-icon invert" alt="" />OpenCode</span
+                  >
                 </div>
               </div>
             </div>
@@ -86,22 +135,61 @@
 
       <!-- ============================== 2. 自动驾驶等级 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-2" style="align-items:center">
+        <div class="flex-col gap-2" style="align-items: center">
           <div class="title-large cn">AI 编程的<span class="gradient-text">自动驾驶等级</span></div>
 
           <div class="auto-levels mt-2">
-            <div class="auto-level" data-f="1"><div class="level-badge" style="color:#555">L0</div><div class="cn">完全人工</div><div class="level-tag dim">古法编程，非遗传承</div></div>
-            <div class="auto-level" data-f="2"><div class="level-badge" style="color:var(--accent3)">L1</div><div class="cn">行内自动补全</div><div class="level-tag"><img src="/icons/tabnine.png" class="tool-icon" alt="">TabNine · <img src="/icons/githubcopilot.svg" class="tool-icon invert" alt="">Copilot</div></div>
-            <div class="auto-level" data-f="3"><div class="level-badge" style="color:var(--accent)">L2</div><div class="cn">代码片段生成 · IDE chat</div><div class="level-tag"><img src="/icons/githubcopilot.svg" class="tool-icon invert" alt="">Copilot · <img src="/icons/cursor.svg" class="tool-icon invert" alt="">Cursor</div></div>
+            <div class="auto-level" data-f="1">
+              <div class="level-badge" style="color: #555">L0</div>
+              <div class="cn">完全人工</div>
+              <div class="level-tag dim">古法编程，非遗传承</div>
+            </div>
+            <div class="auto-level" data-f="2">
+              <div class="level-badge" style="color: var(--accent3)">L1</div>
+              <div class="cn">行内自动补全</div>
+              <div class="level-tag">
+                <img src="/icons/tabnine.png" class="tool-icon" alt="" />TabNine ·
+                <img src="/icons/githubcopilot.svg" class="tool-icon invert" alt="" />Copilot
+              </div>
+            </div>
+            <div class="auto-level" data-f="3">
+              <div class="level-badge" style="color: var(--accent)">L2</div>
+              <div class="cn">代码片段生成 · IDE chat</div>
+              <div class="level-tag">
+                <img src="/icons/githubcopilot.svg" class="tool-icon invert" alt="" />Copilot ·
+                <img src="/icons/cursor.svg" class="tool-icon invert" alt="" />Cursor
+              </div>
+            </div>
             <div class="auto-level-divider cn" data-f="4">Byebye IDE 👋</div>
-            <div class="auto-level" data-f="5"><div class="level-badge" style="color:var(--accent2)">L3</div><div class="cn">Coding agent，人 review</div><div class="level-tag"><img src="/icons/claudecode-color.svg" class="tool-icon" alt="">Claude Code · <img src="/icons/codex-color.svg" class="tool-icon" alt="">Codex · <img src="/icons/cursor.svg" class="tool-icon invert" alt="">Cursor · <img src="/icons/opencode.svg" class="tool-icon invert" alt="">OpenCode</div></div>
-            <div class="auto-level" data-f="6"><div class="level-badge" style="color:var(--accent2)">L4</div><div class="cn">Agent + AI review 完成项目</div><div class="level-tag dim"></div></div>
+            <div class="auto-level" data-f="5">
+              <div class="level-badge" style="color: var(--accent2)">L3</div>
+              <div class="cn">Coding agent，人 review</div>
+              <div class="level-tag">
+                <img src="/icons/claudecode-color.svg" class="tool-icon" alt="" />Claude Code ·
+                <img src="/icons/codex-color.svg" class="tool-icon" alt="" />Codex ·
+                <img src="/icons/cursor.svg" class="tool-icon invert" alt="" />Cursor ·
+                <img src="/icons/opencode.svg" class="tool-icon invert" alt="" />OpenCode
+              </div>
+            </div>
+            <div class="auto-level" data-f="6">
+              <div class="level-badge" style="color: var(--accent2)">L4</div>
+              <div class="cn">Agent + AI review 完成项目</div>
+              <div class="level-tag dim"></div>
+            </div>
             <div class="auto-level-divider cn dim" data-f="7">Byebye Human 😅</div>
-            <div class="auto-level" data-f="8"><div class="level-badge" style="color:var(--accent2)">L5</div><div class="cn">AI 工程团队，完全自主</div><div class="level-tag dim"></div></div>
+            <div class="auto-level" data-f="8">
+              <div class="level-badge" style="color: var(--accent2)">L5</div>
+              <div class="cn">AI 工程团队，完全自主</div>
+              <div class="level-tag dim"></div>
+            </div>
           </div>
 
-          <div class="card mt-2 cn text-center" data-f="9" style="max-width:650px;font-size:0.95rem">
-            L3 开始瓶颈变成 <span class="accent2">code review</span><br>
+          <div
+            class="card mt-2 cn text-center"
+            data-f="9"
+            style="max-width: 650px; font-size: 0.95rem"
+          >
+            L3 开始瓶颈变成 <span class="accent2">code review</span><br />
             <span class="dim">信任还需要慢慢建立才能往 L4 发展</span>
           </div>
         </div>
@@ -112,28 +200,42 @@
         <div class="jpeg-content text-center flex-col">
           <div class="file-name">knowledge.jpeg</div>
 
-          <div class="subtitle cn" data-f="1" style="max-width:650px">
-            LLM 是对人类知识的一种<span class="accent2">有损压缩</span><br>
+          <div class="subtitle cn" data-f="1" style="max-width: 650px">
+            LLM 是对人类知识的一种<span class="accent2">有损压缩</span><br />
             模型越小，丢失越多 — 你看到的“幻觉”其实是压缩损失
           </div>
 
           <div class="compression-levels" data-f="2">
-            <div class="comp-row"><span class="comp-format">RAW</span><div class="comp-bar" style="width:100%;background:var(--accent3)"></div><span class="comp-desc cn">人脑 / 全部知识</span></div>
-            <div class="comp-row"><span class="comp-format">PNG</span><div class="comp-bar" style="width:70%;background:var(--accent)"></div><span class="comp-desc cn">Wikipedia · 教科书 · 文档</span></div>
-            <div class="comp-row current"><span class="comp-format">JPEG</span><div class="comp-bar" style="width:40%;background:var(--accent2)"></div><span class="comp-desc cn">LLM — 实用，但有损失</span></div>
+            <div class="comp-row">
+              <span class="comp-format">RAW</span>
+              <div class="comp-bar" style="width: 100%; background: var(--accent3)"></div>
+              <span class="comp-desc cn">人脑 / 全部知识</span>
+            </div>
+            <div class="comp-row">
+              <span class="comp-format">PNG</span>
+              <div class="comp-bar" style="width: 70%; background: var(--accent)"></div>
+              <span class="comp-desc cn">Wikipedia · 教科书 · 文档</span>
+            </div>
+            <div class="comp-row current">
+              <span class="comp-format">JPEG</span>
+              <div class="comp-bar" style="width: 40%; background: var(--accent2)"></div>
+              <span class="comp-desc cn">LLM — 实用，但有损失</span>
+            </div>
           </div>
 
           <div class="jpeg-demo-overlay" data-f="3">
             <div class="jpeg-demo">
               <canvas id="jpeg-canvas" width="600" height="400"></canvas>
               <div class="jpeg-slider-wrap">
-                <div class="mono dim" style="font-size:0.8rem">拖动 → 模拟不同模型的“压缩率”</div>
-                <input type="range" id="jpeg-slider" min="1" max="100" value="50">
-                <div id="jpeg-quality-label" class="mono accent jpeg-label-fixed">Quality:&nbsp;50% — 🧠 Claude-class</div>
+                <div class="mono dim" style="font-size: 0.8rem">拖动 → 模拟不同模型的“压缩率”</div>
+                <input type="range" id="jpeg-slider" min="1" max="100" value="50" />
+                <div id="jpeg-quality-label" class="mono accent jpeg-label-fixed">
+                  Quality:&nbsp;50% — 🧠 Claude-class
+                </div>
               </div>
             </div>
-            <div class="cn dim text-center" style="max-width:500px;font-size:0.88rem">
-              幻觉不是 bug — 是压缩率的代价<br>
+            <div class="cn dim text-center" style="max-width: 500px; font-size: 0.88rem">
+              幻觉不是 bug — 是压缩率的代价<br />
               <span class="accent">模型越大，精度越高</span>
             </div>
           </div>
@@ -142,92 +244,139 @@
 
       <!-- ============================== 4. 工具选择 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-2" style="align-items:center">
+        <div class="flex-col gap-2" style="align-items: center">
           <div class="title-large cn">我的 <span class="gradient-text">工具选择</span></div>
 
           <div class="tool-row mt-2">
             <div class="tool-row-card" data-f="1">
-              <div class="tool-row-icon"><img src="/icons/codex-color.svg" style="width:32px;height:32px" alt=""></div>
+              <div class="tool-row-icon">
+                <img src="/icons/codex-color.svg" style="width: 32px; height: 32px" alt="" />
+              </div>
               <div class="cn"><strong>Codex</strong></div>
-              <div class="cn dim" style="font-size:.82rem">写代码唯一选择</div>
+              <div class="cn dim" style="font-size: 0.82rem">写代码唯一选择</div>
             </div>
             <div class="tool-row-card" data-f="2">
-              <div class="tool-row-icon"><img src="/icons/claudecode-color.svg" style="width:32px;height:32px" alt=""></div>
+              <div class="tool-row-icon">
+                <img src="/icons/claudecode-color.svg" style="width: 32px; height: 32px" alt="" />
+              </div>
               <div class="cn"><strong>Claude Code</strong></div>
-              <div class="cn dim" style="font-size:.82rem">创意工作</div>
+              <div class="cn dim" style="font-size: 0.82rem">创意工作</div>
             </div>
             <div class="tool-row-card" data-f="3">
-              <div class="tool-row-icon"><img src="/icons/openai.svg" style="width:32px;height:32px" class="invert" alt=""></div>
+              <div class="tool-row-icon">
+                <img
+                  src="/icons/openai.svg"
+                  style="width: 32px; height: 32px"
+                  class="invert"
+                  alt=""
+                />
+              </div>
               <div class="cn"><strong>ChatGPT</strong></div>
-              <div class="cn dim" style="font-size:.82rem">Research</div>
+              <div class="cn dim" style="font-size: 0.82rem">Research</div>
             </div>
             <div class="tool-row-card" data-f="4">
-              <div class="tool-row-icon"><img src="/icons/playwright.svg" style="width:32px;height:32px" alt=""></div>
+              <div class="tool-row-icon">
+                <img src="/icons/playwright.svg" style="width: 32px; height: 32px" alt="" />
+              </div>
               <div class="cn"><strong>Playwright</strong></div>
-              <div class="cn dim" style="font-size:.82rem">MCP</div>
+              <div class="cn dim" style="font-size: 0.82rem">MCP</div>
             </div>
           </div>
 
           <div class="mt-2" data-f="5">
-            <img src="/codex-config.png" alt="Codex config" class="config-img" style="max-width:500px" />
+            <img
+              src="/codex-config.png"
+              alt="Codex config"
+              class="config-img"
+              style="max-width: 500px"
+            />
           </div>
 
           <div class="mt-1" data-f="6">
-            <img src="/agent-poll.png" alt="Agent poll" class="config-img" style="max-width:400px" />
+            <img
+              src="/agent-poll.png"
+              alt="Agent poll"
+              class="config-img"
+              style="max-width: 400px"
+            />
           </div>
 
-          <div class="card mt-1 cn text-center" data-f="7" style="max-width:500px;font-size:1rem">
-            有人说 Codex 太慢了<br>
-            <strong class="accent" style="font-size:1.3rem">靠谱才是真的快</strong>
+          <div
+            class="card mt-1 cn text-center"
+            data-f="7"
+            style="max-width: 500px; font-size: 1rem"
+          >
+            有人说 Codex 太慢了<br />
+            <strong class="accent" style="font-size: 1.3rem">靠谱才是真的快</strong>
           </div>
         </div>
       </section>
 
       <!-- ============================== 5. Skills ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="title-large cn">关于 <span class="gradient-text">Skills</span></div>
 
           <div class="skill-metaphor mt-2" data-f="1">
             <div class="skill-metaphor-item">
-              <div style="font-size:2.5rem">⚫⚪</div>
-              <div class="cn" style="font-size:1rem"><strong>棋谱</strong></div>
-              <div class="cn dim" style="font-size:.85rem">人总结的“最佳实践”</div>
+              <div style="font-size: 2.5rem">⚫⚪</div>
+              <div class="cn" style="font-size: 1rem"><strong>棋谱</strong></div>
+              <div class="cn dim" style="font-size: 0.85rem">人总结的“最佳实践”</div>
             </div>
             <div class="skill-metaphor-arrow">→</div>
             <div class="skill-metaphor-item accent-border">
-              <div style="font-size:2.5rem">🧠</div>
-              <div class="cn" style="font-size:1rem"><strong>AlphaZero</strong></div>
-              <div class="cn dim" style="font-size:.85rem">自己发现更好的走法</div>
+              <div style="font-size: 2.5rem">🧠</div>
+              <div class="cn" style="font-size: 1rem"><strong>AlphaZero</strong></div>
+              <div class="cn dim" style="font-size: 0.85rem">自己发现更好的走法</div>
             </div>
           </div>
 
-          <div class="cn text-center" data-f="2" style="max-width:600px;font-size:.95rem">
-            模型进化太快 — 今天的“棋谱”在下一代面前可能是<span class="accent2">次优解</span><br>
-            <span class="dim" style="font-size:.85rem">LLM 也会有自己的 AlphaZero 时刻，而且并不遥远</span>
+          <div class="cn text-center" data-f="2" style="max-width: 600px; font-size: 0.95rem">
+            模型进化太快 — 今天的“棋谱”在下一代面前可能是<span class="accent2">次优解</span><br />
+            <span class="dim" style="font-size: 0.85rem"
+              >LLM 也会有自己的 AlphaZero 时刻，而且并不遥远</span
+            >
           </div>
 
-          <div class="card cn" data-f="3" style="max-width:600px;font-size:.9rem">
-            <strong class="accent3">什么时候 Skill 有用？</strong><br>
-            <span class="mt-1" style="display:block">让 AI 快速掌握特殊工具 · 自己不熟悉、不容易判断好坏的领域</span><br>
-            <span class="dim" style="font-size:.82rem">即使没有 skill，agent 也能从文档学习 — skill 只是提炼出的索引</span>
+          <div class="card cn" data-f="3" style="max-width: 600px; font-size: 0.9rem">
+            <strong class="accent3">什么时候 Skill 有用？</strong><br />
+            <span class="mt-1" style="display: block"
+              >让 AI 快速掌握特殊工具 · 自己不熟悉、不容易判断好坏的领域</span
+            ><br />
+            <span class="dim" style="font-size: 0.82rem"
+              >即使没有 skill，agent 也能从文档学习 — skill 只是提炼出的索引</span
+            >
           </div>
 
-          <div class="card cn" data-f="4" style="max-width:600px;font-size:.9rem">
-            <strong class="accent2">什么时候 Skill 不太有用？</strong><br>
-            <span class="mt-1" style="display:block">模型已经很熟的领域（主流语言 / 框架）· skill 可能限制 AI 的灵活性</span><br>
-            <span class="dim" style="font-size:.82rem">模型更新后 skill 可能变成瓶颈 — 它按旧经验走，而模型已经“会了”</span>
+          <div class="card cn" data-f="4" style="max-width: 600px; font-size: 0.9rem">
+            <strong class="accent2">什么时候 Skill 不太有用？</strong><br />
+            <span class="mt-1" style="display: block"
+              >模型已经很熟的领域（主流语言 / 框架）· skill 可能限制 AI 的灵活性</span
+            ><br />
+            <span class="dim" style="font-size: 0.82rem"
+              >模型更新后 skill 可能变成瓶颈 — 它按旧经验走，而模型已经“会了”</span
+            >
           </div>
 
-          <div class="dim cn text-center mt-1" data-f="5" style="font-size:.82rem">
-            推荐探索：<a href="https://www.npmjs.com/package/skills" class="inline-link mono" target="_blank" rel="noopener">skills npm package ↗</a> · <a href="https://skills.sh" class="inline-link mono" target="_blank" rel="noopener">skills.sh ↗</a>
+          <div class="dim cn text-center mt-1" data-f="5" style="font-size: 0.82rem">
+            推荐探索：<a
+              href="https://www.npmjs.com/package/skills"
+              class="inline-link mono"
+              target="_blank"
+              rel="noopener"
+              >skills npm package ↗</a
+            >
+            ·
+            <a href="https://skills.sh" class="inline-link mono" target="_blank" rel="noopener"
+              >skills.sh ↗</a
+            >
           </div>
         </div>
       </section>
 
       <!-- ============================== 6. CLI vs MCP ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="title-large cn">CLI vs. <span class="gradient-text">MCP</span></div>
 
           <div class="versus-visual mt-2">
@@ -245,7 +394,9 @@
                 <span class="versus-tag">可组合</span>
                 <span class="versus-tag">透明可调试</span>
               </div>
-              <div class="cn dim" style="font-size:.8rem">开发内环 · Agent 通过 shell 直接调用</div>
+              <div class="cn dim" style="font-size: 0.8rem">
+                开发内环 · Agent 通过 shell 直接调用
+              </div>
             </div>
 
             <div class="versus-vs" data-f="2">+</div>
@@ -264,27 +415,47 @@
                 <span class="versus-tag">跨客户端</span>
                 <span class="versus-tag">结构化输入输出</span>
               </div>
-              <div class="cn dim" style="font-size:.8rem">集成外环 · 标准化工具发现与权限管理</div>
+              <div class="cn dim" style="font-size: 0.8rem">
+                集成外环 · 标准化工具发现与权限管理
+              </div>
             </div>
           </div>
 
-          <div class="card mt-2 cn text-center" data-f="3" style="max-width:680px;font-size:.9rem">
-            对 Agent 来说<strong>两者都很有用</strong> — 多数团队最终二者并存<br>
+          <div
+            class="card mt-2 cn text-center"
+            data-f="3"
+            style="max-width: 680px; font-size: 0.9rem"
+          >
+            对 Agent 来说<strong>两者都很有用</strong> — 多数团队最终二者并存<br />
             <span class="dim">CLI 做底层实现 + 专家入口，MCP 做标准化接口层</span>
           </div>
 
-          <div class="card mt-1 cn text-center" data-f="4" style="max-width:680px;font-size:.9rem">
-            <span class="accent3" style="font-size:1.05rem">推荐：<code>gh</code> CLI</span><br>
-            <span class="dim" style="font-size:.85rem">GitHub 官方 CLI — Agent 友好、半结构化输出、可组合</span>
+          <div
+            class="card mt-1 cn text-center"
+            data-f="4"
+            style="max-width: 680px; font-size: 0.9rem"
+          >
+            <span class="accent3" style="font-size: 1.05rem">推荐：<code>gh</code> CLI</span><br />
+            <span class="dim" style="font-size: 0.85rem"
+              >GitHub 官方 CLI — Agent 友好、半结构化输出、可组合</span
+            >
           </div>
 
-          <a href="https://chatgpt.com/share/69c60854-2b64-83aa-b91d-c4ceff5055c6" class="inline-link dim mono mt-1" data-f="5" style="font-size:.75rem" target="_blank" rel="noopener">详细分析 ↗</a>
+          <a
+            href="https://chatgpt.com/share/69c60854-2b64-83aa-b91d-c4ceff5055c6"
+            class="inline-link dim mono mt-1"
+            data-f="5"
+            style="font-size: 0.75rem"
+            target="_blank"
+            rel="noopener"
+            >详细分析 ↗</a
+          >
         </div>
       </section>
 
       <!-- ============================== 7. Workflow ============================== -->
       <section class="slide">
-        <div class="flex-col gap-2" style="align-items:center">
+        <div class="flex-col gap-2" style="align-items: center">
           <div class="title-large cn">Workflow</div>
 
           <div class="workflow-flow mt-2">
@@ -304,116 +475,138 @@
             </div>
           </div>
 
-          <div class="card cn" data-f="4" style="max-width:700px;font-size:0.85rem">
-            <strong class="dim">Agent 的内循环（每次执行）</strong><br>
-            <span class="mono" style="font-size:.78rem">Plan → Edit → Run tests → Observe → Repair → Update</span><br>
-            <span class="dim" style="font-size:.78rem">— OpenAI Codex 文档里描述的 inner loop</span><br>
-            <span class="mt-1" style="display:block"><strong class="accent">我们的 workflow 是更大的外循环</strong> — 跨 turn、可持久化、跨 session</span>
+          <div class="card cn" data-f="4" style="max-width: 700px; font-size: 0.85rem">
+            <strong class="dim">Agent 的内循环（每次执行）</strong><br />
+            <span class="mono" style="font-size: 0.78rem"
+              >Plan → Edit → Run tests → Observe → Repair → Update</span
+            ><br />
+            <span class="dim" style="font-size: 0.78rem"
+              >— OpenAI Codex 文档里描述的 inner loop</span
+            ><br />
+            <span class="mt-1" style="display: block"
+              ><strong class="accent">我们的 workflow 是更大的外循环</strong> — 跨
+              turn、可持久化、跨 session</span
+            >
           </div>
 
-          <div class="card cn" data-f="5" style="max-width:700px;font-size:0.85rem">
-            <strong class="accent2">journey/ 目录结构</strong> — 把过程写进文件，跨 session 不丢 track
-            <div class="mono mt-1" style="font-size:0.78rem;white-space:pre">journey/
-├── research/
-├── plans/
-├── prompts/
-├── logs/
-└── ...</div>
-            <div class="dim mt-1" style="font-size:0.78rem">每个阶段是一个目录，输出 = 对开发过程和决策的 distill</div>
+          <div class="card cn" data-f="5" style="max-width: 700px; font-size: 0.85rem">
+            <strong class="accent2">journey/ 目录结构</strong> — 把过程写进文件，跨 session 不丢
+            track
+            <div class="mono mt-1" style="font-size: 0.78rem; white-space: pre">
+              journey/ ├── research/ ├── plans/ ├── prompts/ ├── logs/ └── ...
+            </div>
+            <div class="dim mt-1" style="font-size: 0.78rem">
+              每个阶段是一个目录，输出 = 对开发过程和决策的 distill
+            </div>
           </div>
 
           <div data-f="6" class="mt-1">
-            <a href="https://github.com/Justineo/swrv-next/tree/main/journey" class="inline-link mono dim" style="font-size:.8rem" target="_blank" rel="noopener">案例：Justineo/swrv-next — journey/ 记录了全过程 ↗</a>
+            <a
+              href="https://github.com/Justineo/swrv-next/tree/main/journey"
+              class="inline-link mono dim"
+              style="font-size: 0.8rem"
+              target="_blank"
+              rel="noopener"
+              >案例：Justineo/swrv-next — journey/ 记录了全过程 ↗</a
+            >
           </div>
         </div>
       </section>
 
       <!-- ============================== 8. Research 双模式 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="title-large cn">Research <span class="gradient-text">双模式</span></div>
 
           <div class="research-modes mt-2">
             <div class="research-mode-card" data-f="1">
               <div class="research-mode-icons">
-                <img src="/icons/openai.svg" class="research-icon invert" alt="">
+                <img src="/icons/openai.svg" class="research-icon invert" alt="" />
               </div>
               <div class="research-mode-label accent">Context-free</div>
-              <div class="cn" style="font-size:.95rem">
-                不带先入为主的 bias<br>
+              <div class="cn" style="font-size: 0.95rem">
+                不带先入为主的 bias<br />
                 基于第一性原理调研
               </div>
-              <div class="cn dim" style="font-size:.8rem">ChatGPT Deep Research</div>
+              <div class="cn dim" style="font-size: 0.8rem">ChatGPT Deep Research</div>
             </div>
 
             <div class="research-mode-arrow" data-f="2">+</div>
 
             <div class="research-mode-card" data-f="2">
               <div class="research-mode-icons">
-                <img src="/icons/claudecode-color.svg" class="research-icon" alt="">
-                <img src="/icons/codex-color.svg" class="research-icon" alt="">
+                <img src="/icons/claudecode-color.svg" class="research-icon" alt="" />
+                <img src="/icons/codex-color.svg" class="research-icon" alt="" />
               </div>
               <div class="research-mode-label accent2">Context-rich</div>
-              <div class="cn" style="font-size:.95rem">
-                理解当前设计决策和限制<br>
+              <div class="cn" style="font-size: 0.95rem">
+                理解当前设计决策和限制<br />
                 在现有架构内寻找最佳方案
               </div>
-              <div class="cn dim" style="font-size:.8rem">Claude Code · Codex</div>
+              <div class="cn dim" style="font-size: 0.8rem">Claude Code · Codex</div>
             </div>
           </div>
 
-          <div class="card mt-2 cn text-center" data-f="3" style="max-width:650px;font-size:.9rem">
-            先<span class="accent">不带预设地调研</span>，再<span class="accent2">结合项目上下文落地</span><br>
-            <span class="dim" style="font-size:.82rem">两者结合 → 补完思考空间 → 更好的设计决策</span>
+          <div
+            class="card mt-2 cn text-center"
+            data-f="3"
+            style="max-width: 650px; font-size: 0.9rem"
+          >
+            先<span class="accent">不带预设地调研</span>，再<span class="accent2"
+              >结合项目上下文落地</span
+            ><br />
+            <span class="dim" style="font-size: 0.82rem"
+              >两者结合 → 补完思考空间 → 更好的设计决策</span
+            >
           </div>
         </div>
       </section>
 
       <!-- ============================== 9. Prompt 经验 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="title-large cn">一些个人 <span class="gradient-text">Prompt 经验</span></div>
 
           <div class="prompt-cards mt-2">
             <div class="prompt-card" data-f="1">
               <div class="prompt-num">01</div>
               <div class="prompt-body cn">
-                <strong style="font-size:1.05rem">基于第一性原理思考</strong><br>
+                <strong style="font-size: 1.05rem">基于第一性原理思考</strong><br />
                 <span class="dim">不要套用模式，从根本推导</span>
               </div>
             </div>
             <div class="prompt-card" data-f="2">
               <div class="prompt-num">02</div>
               <div class="prompt-body cn">
-                <strong style="font-size:1.05rem">从根源解决，避免 ad-hoc patch</strong><br>
+                <strong style="font-size: 1.05rem">从根源解决，避免 ad-hoc patch</strong><br />
                 <span class="dim">找到问题的本质，不是糊一层</span>
               </div>
             </div>
             <div class="prompt-card" data-f="3">
               <div class="prompt-num">03</div>
               <div class="prompt-body cn">
-                <strong style="font-size:1.05rem">对我的思路保持中立</strong><br>
+                <strong style="font-size: 1.05rem">对我的思路保持中立</strong><br />
                 <span class="dim">不要假设我之前的做法是正确的，该挑战就挑战</span>
               </div>
             </div>
             <div class="prompt-card" data-f="4">
               <div class="prompt-num">04</div>
               <div class="prompt-body cn">
-                <strong style="font-size:1.05rem">先理解现有代码再动手</strong><br>
+                <strong style="font-size: 1.05rem">先理解现有代码再动手</strong><br />
                 <span class="dim">不要还没读完就开始改，先搞清楚为什么这样写</span>
               </div>
             </div>
             <div class="prompt-card" data-f="5">
               <div class="prompt-num">05</div>
               <div class="prompt-body cn">
-                <strong style="font-size:1.05rem">相信 AI 的基础能力</strong><br>
+                <strong style="font-size: 1.05rem">相信 AI 的基础能力</strong><br />
                 <span class="dim">不限定文件路径，不给固定 context — 让 AI 自己去找、去判断</span>
               </div>
             </div>
           </div>
 
-          <div class="cn dim text-center mt-1" data-f="6" style="font-size:.85rem">
-            多使用，对 AI 能干什么不能干什么有完整的感受<br>
+          <div class="cn dim text-center mt-1" data-f="6" style="font-size: 0.85rem">
+            多使用，对 AI 能干什么不能干什么有完整的感受<br />
             <span class="accent">对于 AI 擅长的 → 相信 AI</span>
           </div>
         </div>
@@ -422,29 +615,43 @@
       <!-- ============================== 10. 不只是 Vibe Coding (intro) ============================== -->
       <section class="slide slide-title">
         <div class="bg-grid"></div>
-        <div class="text-center" style="position:relative;z-index:1">
-          <div class="title-mega cn" style="font-size:clamp(2.5rem,6vw,4.5rem)">不只是<br><span class="gradient-text">Vibe Coding</span></div>
+        <div class="text-center" style="position: relative; z-index: 1">
+          <div class="title-mega cn" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
+            不只是<br /><span class="gradient-text">Vibe Coding</span>
+          </div>
           <div class="subtitle cn" data-f="1">AI 不只能写代码 — 它能帮你沟通、协作、探索想法</div>
         </div>
       </section>
 
       <!-- ============================== 11. 不只是 Vibe Coding: 设计协作 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="section-badge cn">不只是 Vibe Coding</div>
           <div class="title-large cn">设计交互<span class="gradient-text">协作</span></div>
 
-          <div class="cn" data-f="1" style="max-width:550px;font-size:.95rem;text-align:center">
-            我们开发的是给 developer 用的工具<br>
+          <div
+            class="cn"
+            data-f="1"
+            style="max-width: 550px; font-size: 0.95rem; text-align: center"
+          >
+            我们开发的是给 developer 用的工具<br />
             有些场景<strong class="accent">开发者比设计师更理解需求</strong>
           </div>
 
-          <div class="cn dim" data-f="2" style="max-width:500px;font-size:.88rem;text-align:center">
-            开发者用 AI 快速出原型 → 和设计师一起看效果 → 迭代<br>
+          <div
+            class="cn dim"
+            data-f="2"
+            style="max-width: 500px; font-size: 0.88rem; text-align: center"
+          >
+            开发者用 AI 快速出原型 → 和设计师一起看效果 → 迭代<br />
             交互细节不再靠文字描述和想象
           </div>
 
-          <div class="showcase-card clickable mt-2" data-f="3" data-url="https://v0-kong-datakit-flow-editor.vercel.app/">
+          <div
+            class="showcase-card clickable mt-2"
+            data-f="3"
+            data-url="https://v0-kong-datakit-flow-editor.vercel.app/"
+          >
             <div class="showcase-label mono dim">v0-kong-datakit-flow-editor.vercel.app</div>
             <div class="showcase-desc cn">点击预览 ↗</div>
           </div>
@@ -453,21 +660,33 @@
 
       <!-- ============================== 12. 不只是 Vibe Coding: 会议准备 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="section-badge cn">不只是 Vibe Coding</div>
           <div class="title-large cn">会议讨论<span class="gradient-text">准备</span></div>
 
-          <div class="cn" data-f="1" style="max-width:560px;font-size:.95rem;text-align:center">
-            Deep Research 调研 → 结合自己的 key observation 和 insight 整理成文档<br>
+          <div
+            class="cn"
+            data-f="1"
+            style="max-width: 560px; font-size: 0.95rem; text-align: center"
+          >
+            Deep Research 调研 → 结合自己的 key observation 和 insight 整理成文档<br />
             → 丢给 Claude Code 制作<strong class="accent">可交互的讨论材料</strong>
           </div>
 
-          <div class="cn dim" data-f="2" style="max-width:520px;font-size:.88rem;text-align:center">
-            例：围绕"能不能用 vibe coded 的原型作为设计交付物"这个话题<br>
+          <div
+            class="cn dim"
+            data-f="2"
+            style="max-width: 520px; font-size: 0.88rem; text-align: center"
+          >
+            例：围绕"能不能用 vibe coded 的原型作为设计交付物"这个话题<br />
             要求 AI 尽量使用直观的可视化方法来呈现
           </div>
 
-          <div class="showcase-card clickable mt-2" data-f="3" data-url="https://vibe-hand-off.vercel.app/">
+          <div
+            class="showcase-card clickable mt-2"
+            data-f="3"
+            data-url="https://vibe-hand-off.vercel.app/"
+          >
             <div class="showcase-label mono dim">vibe-hand-off.vercel.app</div>
             <div class="showcase-desc cn">点击预览 ↗</div>
           </div>
@@ -476,21 +695,33 @@
 
       <!-- ============================== 13. 不只是 Vibe Coding: 辅助沟通 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="section-badge cn">不只是 Vibe Coding</div>
           <div class="title-large cn">辅助<span class="gradient-text">沟通理解</span></div>
 
-          <div class="cn" data-f="1" style="max-width:550px;font-size:.95rem;text-align:center">
-            复杂的技术方案，用文字描述容易有理解偏差<br>
+          <div
+            class="cn"
+            data-f="1"
+            style="max-width: 550px; font-size: 0.95rem; text-align: center"
+          >
+            复杂的技术方案，用文字描述容易有理解偏差<br />
             <strong class="accent">做个可交互的文档出来，比说一百句都清楚</strong>
           </div>
 
-          <div class="cn dim" data-f="2" style="max-width:500px;font-size:.88rem;text-align:center">
-            用 AI 快速生成可交互的文档<br>
+          <div
+            class="cn dim"
+            data-f="2"
+            style="max-width: 500px; font-size: 0.88rem; text-align: center"
+          >
+            用 AI 快速生成可交互的文档<br />
             团队成员直接看、直接操作，减少反复确认
           </div>
 
-          <div class="showcase-card clickable mt-2" data-f="3" data-url="https://v0-plugin-form-optimization.vercel.app/">
+          <div
+            class="showcase-card clickable mt-2"
+            data-f="3"
+            data-url="https://v0-plugin-form-optimization.vercel.app/"
+          >
             <div class="showcase-label mono dim">v0-plugin-form-optimization.vercel.app</div>
             <div class="showcase-desc cn">点击预览 ↗</div>
           </div>
@@ -499,13 +730,20 @@
 
       <!-- ============================== 14. 用 AI 做设计 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-2" style="align-items:center;width:100%">
+        <div class="flex-col gap-2" style="align-items: center; width: 100%">
           <div class="title-large cn">用 AI 做设计</div>
-          <div class="subtitle cn" data-f="1">AI 味的本质 = <span class="accent2">平均设计</span>：什么都有，但缺少取舍和个性</div>
+          <div class="subtitle cn" data-f="1">
+            AI 味的本质 = <span class="accent2">平均设计</span>：什么都有，但缺少取舍和个性
+          </div>
 
           <div class="ai-taste-demo mt-2" data-f="2">
             <div class="ai-taste-frame">
-              <iframe id="ai-iframe" src="/ai-taste.html" class="ai-taste-iframe" title="AI taste demo"></iframe>
+              <iframe
+                id="ai-iframe"
+                src="/ai-taste.html"
+                class="ai-taste-iframe"
+                title="AI taste demo"
+              ></iframe>
               <div class="ai-taste-toggle interactive">
                 <button class="taste-btn active" data-src="/ai-taste.html">Claude Code</button>
                 <button class="taste-btn" data-src="/no-ai-taste-2.html">OpenAI skill</button>
@@ -515,8 +753,12 @@
             </div>
           </div>
 
-          <div class="cn dim text-center mt-1" data-f="3" style="max-width:600px;font-size:.85rem">
-            用 Skill 能去除 AI 味 — 但基于 Skill 做出来的版式<br>
+          <div
+            class="cn dim text-center mt-1"
+            data-f="3"
+            style="max-width: 600px; font-size: 0.85rem"
+          >
+            用 Skill 能去除 AI 味 — 但基于 Skill 做出来的版式<br />
             <span class="accent">会不会成为新的 AI 味？</span>
           </div>
         </div>
@@ -525,92 +767,161 @@
       <!-- ============================== 15. 一些变化 (section intro) ============================== -->
       <section class="slide slide-title">
         <div class="bg-grid"></div>
-        <div class="text-center" style="position:relative;z-index:1">
-          <div class="title-mega cn" style="font-size:clamp(2.5rem,6vw,4.5rem)"><span class="gradient-text">一些变化</span></div>
+        <div class="text-center" style="position: relative; z-index: 1">
+          <div class="title-mega cn" style="font-size: clamp(2.5rem, 6vw, 4.5rem)">
+            <span class="gradient-text">一些变化</span>
+          </div>
           <div class="subtitle cn" data-f="1">深度使用 AI 之后，一些习惯和心态上的感受</div>
         </div>
       </section>
 
       <!-- ============================== 16. 信息获取在变 ============================== -->
       <section class="slide">
-        <div class="text-center flex-col gap-3" style="align-items:center">
+        <div class="text-center flex-col gap-3" style="align-items: center">
           <div class="title-large cn"><span class="gradient-text">信息获取</span>方式在变</div>
           <div class="subtitle cn" data-f="1">从构造 query 到直接表达需求</div>
 
           <div class="intent-funnel mt-2" data-f="2">
             <div class="funnel-intent cn">
-              <div class="funnel-label dim" style="font-size:.75rem">你脑中的问题</div>
+              <div class="funnel-label dim" style="font-size: 0.75rem">你脑中的问题</div>
               React 项目打包后首屏白屏，控制台没有报错
             </div>
 
             <div class="funnel-split">
               <div class="funnel-path">
                 <div class="funnel-pipe dim">
-                  <svg viewBox="0 0 100 40" class="funnel-svg"><path d="M 10 0 L 90 0 L 70 40 L 30 40 Z" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)"/><text x="50" y="24" text-anchor="middle" fill="#777" font-size="8" font-family="Space Grotesk">搜索引擎</text></svg>
+                  <svg viewBox="0 0 100 40" class="funnel-svg">
+                    <path
+                      d="M 10 0 L 90 0 L 70 40 L 30 40 Z"
+                      fill="rgba(255,255,255,0.04)"
+                      stroke="rgba(255,255,255,0.1)"
+                    />
+                    <text
+                      x="50"
+                      y="24"
+                      text-anchor="middle"
+                      fill="#777"
+                      font-size="8"
+                      font-family="Space Grotesk"
+                    >
+                      搜索引擎
+                    </text>
+                  </svg>
                 </div>
                 <div class="funnel-output query-output">
-                  <div class="mono" style="font-size:.75rem;color:var(--dim)">react 白屏 production 无报错</div>
-                  <div class="mono" style="font-size:.7rem;color:var(--dim);margin-top:.2rem">→ react blank page after build</div>
-                  <div class="mono" style="font-size:.7rem;color:var(--dim)">→ react chunk load error white screen</div>
+                  <div class="mono" style="font-size: 0.75rem; color: var(--dim)">
+                    react 白屏 production 无报错
+                  </div>
+                  <div
+                    class="mono"
+                    style="font-size: 0.7rem; color: var(--dim); margin-top: 0.2rem"
+                  >
+                    → react blank page after build
+                  </div>
+                  <div class="mono" style="font-size: 0.7rem; color: var(--dim)">
+                    → react chunk load error white screen
+                  </div>
                 </div>
-                <div class="funnel-loss cn dim" style="font-size:.7rem">多次换 query · 扫 StackOverflow · 自己筛选</div>
+                <div class="funnel-loss cn dim" style="font-size: 0.7rem">
+                  多次换 query · 扫 StackOverflow · 自己筛选
+                </div>
               </div>
 
               <div class="funnel-vs">vs</div>
 
               <div class="funnel-path">
                 <div class="funnel-pipe accent-pipe">
-                  <svg viewBox="0 0 100 40" class="funnel-svg"><rect x="10" y="0" width="80" height="40" rx="4" fill="rgba(124,106,239,0.06)" stroke="rgba(124,106,239,0.2)"/><text x="50" y="24" text-anchor="middle" fill="#7c6aef" font-size="8" font-family="Space Grotesk">LLM + Web Search</text></svg>
+                  <svg viewBox="0 0 100 40" class="funnel-svg">
+                    <rect
+                      x="10"
+                      y="0"
+                      width="80"
+                      height="40"
+                      rx="4"
+                      fill="rgba(124,106,239,0.06)"
+                      stroke="rgba(124,106,239,0.2)"
+                    />
+                    <text
+                      x="50"
+                      y="24"
+                      text-anchor="middle"
+                      fill="#7c6aef"
+                      font-size="8"
+                      font-family="Space Grotesk"
+                    >
+                      LLM + Web Search
+                    </text>
+                  </svg>
                 </div>
-                <div class="funnel-output prompt-output cn" style="font-size:.8rem">
+                <div class="funnel-output prompt-output cn" style="font-size: 0.8rem">
                   直接描述问题和上下文 → 一次给出诊断 + 方案
                 </div>
-                <div class="funnel-gain accent3 cn" style="font-size:.7rem">Web search 本质上自动完成了人肉搜索</div>
+                <div class="funnel-gain accent3 cn" style="font-size: 0.7rem">
+                  Web search 本质上自动完成了人肉搜索
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="card mt-2 cn text-center" data-f="3" style="max-width:600px;font-size:.9rem">
-            单次搜索可能更快，但<span class="accent">拿到答案的整体速度</span>后者更快<br>
-            <span class="dim" style="font-size:.8rem">我的 Google 使用量下降了 95%<br>剩下 5% 是肌肉记忆 — 忘了切换，在地址栏打了</span>
+          <div
+            class="card mt-2 cn text-center"
+            data-f="3"
+            style="max-width: 600px; font-size: 0.9rem"
+          >
+            单次搜索可能更快，但<span class="accent">拿到答案的整体速度</span>后者更快<br />
+            <span class="dim" style="font-size: 0.8rem"
+              >我的 Google 使用量下降了 95%<br />剩下 5% 是肌肉记忆 — 忘了切换，在地址栏打了</span
+            >
           </div>
         </div>
       </section>
 
       <!-- ============================== 17. 默认不信任"快" ============================== -->
       <section class="slide">
-        <div class="text-center flex-col gap-3" style="align-items:center">
+        <div class="text-center flex-col gap-3" style="align-items: center">
           <div class="title-large cn">默认不信任<span class="gradient-text">“快”</span></div>
 
-          <div class="card mt-3 cn" data-f="1" style="max-width:600px;font-size:1.05rem;text-align:center">
+          <div
+            class="card mt-3 cn"
+            data-f="1"
+            style="max-width: 600px; font-size: 1.05rem; text-align: center"
+          >
             用了 AI 以后，我反而开始<strong>信任“慢”</strong>
           </div>
 
-          <div class="cn" data-f="2" style="max-width:550px;font-size:.95rem;text-align:center">
+          <div
+            class="cn"
+            data-f="2"
+            style="max-width: 550px; font-size: 0.95rem; text-align: center"
+          >
             <span class="dim">
-              “快”给我一种不踏实的感觉 — AI 是不是跳过了什么？<br>
+              “快”给我一种不踏实的感觉 — AI 是不是跳过了什么？<br />
               “慢”说明它在认真思考，在做 research，在 plan
             </span>
           </div>
 
-          <div class="cn mt-2" data-f="3" style="font-size:1.1rem;text-align:center">
-            这和我们对人的直觉一样：<br>
-            <span class="accent" style="font-size:1.2rem">三秒给你答案的人，你信吗？</span>
+          <div class="cn mt-2" data-f="3" style="font-size: 1.1rem; text-align: center">
+            这和我们对人的直觉一样：<br />
+            <span class="accent" style="font-size: 1.2rem">三秒给你答案的人，你信吗？</span>
           </div>
         </div>
       </section>
 
       <!-- ============================== 18. AI 在生活中 ============================== -->
       <section class="slide">
-        <div class="flex-col gap-3" style="align-items:center">
+        <div class="flex-col gap-3" style="align-items: center">
           <div class="title-large cn">AI 在<span class="gradient-text">生活</span>中</div>
 
-          <div class="card cn text-center mt-1" data-f="1" style="max-width:600px;font-size:1.05rem">
-            <strong class="accent" style="font-size:1.2rem">Coding agent 就是通用 agent</strong>
+          <div
+            class="card cn text-center mt-1"
+            data-f="1"
+            style="max-width: 600px; font-size: 1.05rem"
+          >
+            <strong class="accent" style="font-size: 1.2rem">Coding agent 就是通用 agent</strong>
           </div>
 
-          <div class="cn text-center" data-f="2" style="max-width:580px;font-size:.9rem">
-            Coding agent 本质上是一个<strong>用代码解决问题的方法论实现</strong><br>
+          <div class="cn text-center" data-f="2" style="max-width: 580px; font-size: 0.9rem">
+            Coding agent 本质上是一个<strong>用代码解决问题的方法论实现</strong><br />
             <span class="dim">最擅长写代码，但对数字世界的其他场景同样有广阔的用武之地</span>
           </div>
 
@@ -623,7 +934,12 @@
               <div class="gp-case-title">📝 帮妻子 refresh 简历</div>
               <div class="dim">Claude Code</div>
             </div>
-            <div class="gp-case cn clickable" data-f="5" data-url="https://panyi-2026.justineo.me/pepper" data-mobile="true">
+            <div
+              class="gp-case cn clickable"
+              data-f="5"
+              data-url="https://panyi-2026.justineo.me/pepper"
+              data-mobile="true"
+            >
               <div class="gp-case-title">⚽ 女儿足球赛赛历</div>
               <div class="dim">Codex · 自动生成 .ics 订阅 ↗</div>
             </div>
@@ -637,27 +953,31 @@
 
       <!-- ============================== 19. Emoji 猜影视作品 ============================== -->
       <section class="slide">
-        <div class="text-center flex-col gap-3" style="align-items:center">
+        <div class="text-center flex-col gap-3" style="align-items: center">
           <div class="title-large cn">🎬 和 AI 一起 <span class="gradient-text">Play</span></div>
-          <div class="subtitle cn" style="max-width:500px">不只是工作搭档 — AI 也可以是你的玩伴<br>用 emoji 猜影视作品，题目是 AI 出的</div>
+          <div class="subtitle cn" style="max-width: 500px">
+            不只是工作搭档 — AI 也可以是你的玩伴<br />用 emoji 猜影视作品，题目是 AI 出的
+          </div>
 
           <div id="emoji-teaser" class="mt-2" data-f="1">
-            <div class="cn" style="font-size:1.1rem">准备好了吗？</div>
+            <div class="cn" style="font-size: 1.1rem">准备好了吗？</div>
             <button class="quiz-btn mt-2 interactive" id="emoji-start">开始！</button>
           </div>
 
-          <div id="emoji-game" style="display:none" class="flex-col gap-2 text-center" data-f="1">
+          <div id="emoji-game" style="display: none" class="flex-col gap-2 text-center" data-f="1">
             <div class="emoji-display" id="emoji-display"></div>
             <div class="emoji-answer" id="emoji-answer">???</div>
-            <div class="flex-row gap-2 mt-1 interactive" style="justify-content:center">
+            <div class="flex-row gap-2 mt-1 interactive" style="justify-content: center">
               <button class="quiz-btn" id="emoji-reveal">揭晓答案</button>
               <button class="quiz-btn" id="emoji-next">下一题 →</button>
             </div>
           </div>
 
-          <div class="mt-3 cn dim" data-f="2" style="font-size:0.85rem">想自己玩？</div>
-          <div class="flex-row gap-2 interactive" data-f="2" style="justify-content:center">
-            <a id="chatgpt-quiz-link" href="#" class="chatgpt-link" target="_blank" rel="noopener">在 ChatGPT 里试试 ↗</a>
+          <div class="mt-3 cn dim" data-f="2" style="font-size: 0.85rem">想自己玩？</div>
+          <div class="flex-row gap-2 interactive" data-f="2" style="justify-content: center">
+            <a id="chatgpt-quiz-link" href="#" class="chatgpt-link" target="_blank" rel="noopener"
+              >在 ChatGPT 里试试 ↗</a
+            >
             <button class="quiz-btn" id="copy-prompt">复制 Prompt</button>
           </div>
         </div>
@@ -666,25 +986,38 @@
       <!-- ============================== 20. Q&A ============================== -->
       <section class="slide slide-title">
         <div class="bg-grid"></div>
-        <div class="text-center" style="position:relative;z-index:1">
+        <div class="text-center" style="position: relative; z-index: 1">
           <div class="title-mega gradient-text">Q & A</div>
           <div class="subtitle cn mt-2">或者继续聊 AI 的任何话题</div>
           <div class="outro-stack mt-4">
-            <div class="dim cn" style="font-size:0.85rem">这个 slides 是怎么做的？</div>
-            <div class="flex-row gap-2" style="flex-wrap:wrap;justify-content:center">
-              <span class="tool-badge tool-badge-lg"><img src="/icons/claudecode-color.svg" class="tool-icon-lg" alt="">Claude Code</span>
-              <span class="tool-badge tool-badge-lg"><img src="/icons/viteplus.svg" class="tool-icon-lg" alt="">Vite+</span>
+            <div class="dim cn" style="font-size: 0.85rem">这个 slides 是怎么做的？</div>
+            <div class="flex-row gap-2" style="flex-wrap: wrap; justify-content: center">
+              <span class="tool-badge tool-badge-lg"
+                ><img src="/icons/claudecode-color.svg" class="tool-icon-lg" alt="" />Claude
+                Code</span
+              >
+              <span class="tool-badge tool-badge-lg"
+                ><img src="/icons/viteplus.svg" class="tool-icon-lg" alt="" />Vite+</span
+              >
             </div>
-            <div class="dim cn mt-2" style="font-size:0.8rem">策划 + 设计 + 实现 = 多轮对话 + 多次 review</div>
-            <a href="https://github.com/Justineo/working-with-ai" class="inline-link mono mt-2" style="font-size:0.75rem" target="_blank" rel="noopener">github.com/Justineo/working-with-ai ↗</a>
+            <div class="dim cn mt-2" style="font-size: 0.8rem">
+              策划 + 设计 + 实现 = 多轮对话 + 多次 review
+            </div>
+            <a
+              href="https://github.com/Justineo/working-with-ai"
+              class="inline-link mono mt-2"
+              style="font-size: 0.75rem"
+              target="_blank"
+              rel="noopener"
+              >github.com/Justineo/working-with-ai ↗</a
+            >
           </div>
         </div>
       </section>
-
     </div>
 
     <!-- iframe overlay for external links -->
-    <div id="iframe-overlay" class="iframe-overlay" style="display:none">
+    <div id="iframe-overlay" class="iframe-overlay" style="display: none">
       <div class="iframe-overlay-bg"></div>
       <div class="iframe-overlay-content">
         <div class="device-chrome"></div>
@@ -701,7 +1034,9 @@
     <div id="mobile-nav" class="mobile-nav">
       <button class="mobile-nav-btn" id="mnav-prev" aria-label="上一页">◀</button>
       <button class="mobile-nav-btn" id="mnav-up" aria-label="上一步">▲</button>
-      <button class="mobile-nav-btn mobile-nav-overview" id="mnav-overview" aria-label="总览">⊞</button>
+      <button class="mobile-nav-btn mobile-nav-overview" id="mnav-overview" aria-label="总览">
+        ⊞
+      </button>
       <button class="mobile-nav-btn" id="mnav-down" aria-label="下一步">▼</button>
       <button class="mobile-nav-btn" id="mnav-next" aria-label="下一页">▶</button>
     </div>

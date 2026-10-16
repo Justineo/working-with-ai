@@ -1,465 +1,522 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexusAI — AI-Powered Workflow Platform</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusAI — AI-Powered Workflow Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  html {
-    scrollbar-width: thin;
-    scrollbar-color: rgba(255,255,255,0.08) transparent;
-  }
-  ::-webkit-scrollbar { width: 5px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 3px; }
-  ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+      }
+      ::-webkit-scrollbar {
+        width: 5px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
 
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: #0c0c0e;
-    color: #b0aeb8;
-    overflow-x: hidden;
-    min-height: 100dvh;
-    -webkit-font-smoothing: antialiased;
-  }
+      body {
+        font-family: "Outfit", sans-serif;
+        background: #0c0c0e;
+        color: #b0aeb8;
+        overflow-x: hidden;
+        min-height: 100dvh;
+        -webkit-font-smoothing: antialiased;
+      }
 
-  a { text-decoration: none; color: inherit; }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
 
-  /* ===== NAV ===== */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 48px;
-    height: 56px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .logo {
-    font-size: 14px;
-    font-weight: 600;
-    color: #dddbe3;
-    letter-spacing: -0.3px;
-  }
-  .logo-dot {
-    display: inline-block;
-    width: 5px;
-    height: 5px;
-    background: #c97b4a;
-    border-radius: 50%;
-    margin-left: 2px;
-    vertical-align: middle;
-    position: relative;
-    top: -1px;
-  }
-  nav ul {
-    display: flex;
-    align-items: center;
-    gap: 32px;
-    list-style: none;
-  }
-  nav ul li {
-    display: flex;
-    align-items: center;
-    height: 56px;
-  }
-  nav ul li a {
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(176,174,184,0.5);
-    letter-spacing: 0.3px;
-  }
-  nav ul li a:hover {
-    color: rgba(176,174,184,0.85);
-  }
-  .nav-cta-link {
-    font-size: 11px;
-    font-weight: 500;
-    color: #0c0c0e;
-    background: #c97b4a;
-    padding: 6px 16px;
-    border-radius: 4px;
-    letter-spacing: 0.2px;
-  }
-  .nav-cta-link:hover {
-    background: #d98a5a;
-  }
+      /* ===== NAV ===== */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 48px;
+        height: 56px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .logo {
+        font-size: 14px;
+        font-weight: 600;
+        color: #dddbe3;
+        letter-spacing: -0.3px;
+      }
+      .logo-dot {
+        display: inline-block;
+        width: 5px;
+        height: 5px;
+        background: #c97b4a;
+        border-radius: 50%;
+        margin-left: 2px;
+        vertical-align: middle;
+        position: relative;
+        top: -1px;
+      }
+      nav ul {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        list-style: none;
+      }
+      nav ul li {
+        display: flex;
+        align-items: center;
+        height: 56px;
+      }
+      nav ul li a {
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(176, 174, 184, 0.5);
+        letter-spacing: 0.3px;
+      }
+      nav ul li a:hover {
+        color: rgba(176, 174, 184, 0.85);
+      }
+      .nav-cta-link {
+        font-size: 11px;
+        font-weight: 500;
+        color: #0c0c0e;
+        background: #c97b4a;
+        padding: 6px 16px;
+        border-radius: 4px;
+        letter-spacing: 0.2px;
+      }
+      .nav-cta-link:hover {
+        background: #d98a5a;
+      }
 
-  /* ===== HERO — extreme asymmetry ===== */
-  .hero {
-    display: grid;
-    grid-template-columns: 7fr 5fr;
-    min-height: 340px;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .hero-left {
-    padding: 72px 0 64px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    border-right: 1px solid rgba(255,255,255,0.04);
-  }
-  .hero-tag {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: #c97b4a;
-    margin-bottom: 28px;
-  }
-  .hero-left h1 {
-    font-size: clamp(28px, 3.8vw, 42px);
-    font-weight: 700;
-    line-height: 1.06;
-    letter-spacing: -1.8px;
-    color: #dddbe3;
-    max-width: 480px;
-  }
-  .hero-left h1 em {
-    font-style: normal;
-    font-weight: 300;
-    color: rgba(221,219,227,0.4);
-  }
-  .hero-right {
-    padding: 72px 48px 64px 48px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
-  .hero-right p {
-    font-size: 13.5px;
-    line-height: 1.8;
-    color: rgba(176,174,184,0.45);
-    font-weight: 300;
-    max-width: 380px;
-    margin-bottom: 36px;
-  }
-  .hero-actions {
-    display: flex;
-    gap: 14px;
-    align-items: center;
-  }
-  .btn-primary {
-    display: inline-block;
-    padding: 11px 28px;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: inherit;
-    color: #0c0c0e;
-    background: #c97b4a;
-    border: none;
-    cursor: pointer;
-    letter-spacing: 0.2px;
-    border-radius: 4px;
-  }
-  .btn-primary:hover { background: #d98a5a; }
-  .btn-primary:active { transform: scale(0.98); }
-  .btn-outline {
-    display: inline-block;
-    padding: 10px 24px;
-    font-size: 12px;
-    font-weight: 400;
-    color: rgba(176,174,184,0.55);
-    background: transparent;
-    border: 1px solid rgba(255,255,255,0.08);
-    letter-spacing: 0.2px;
-    border-radius: 4px;
-  }
-  .btn-outline:hover {
-    border-color: rgba(255,255,255,0.15);
-    color: rgba(176,174,184,0.8);
-  }
-  .btn-outline:active { transform: scale(0.98); }
+      /* ===== HERO — extreme asymmetry ===== */
+      .hero {
+        display: grid;
+        grid-template-columns: 7fr 5fr;
+        min-height: 340px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .hero-left {
+        padding: 72px 0 64px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border-right: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .hero-tag {
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: #c97b4a;
+        margin-bottom: 28px;
+      }
+      .hero-left h1 {
+        font-size: clamp(28px, 3.8vw, 42px);
+        font-weight: 700;
+        line-height: 1.06;
+        letter-spacing: -1.8px;
+        color: #dddbe3;
+        max-width: 480px;
+      }
+      .hero-left h1 em {
+        font-style: normal;
+        font-weight: 300;
+        color: rgba(221, 219, 227, 0.4);
+      }
+      .hero-right {
+        padding: 72px 48px 64px 48px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .hero-right p {
+        font-size: 13.5px;
+        line-height: 1.8;
+        color: rgba(176, 174, 184, 0.45);
+        font-weight: 300;
+        max-width: 380px;
+        margin-bottom: 36px;
+      }
+      .hero-actions {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 11px 28px;
+        font-size: 12px;
+        font-weight: 600;
+        font-family: inherit;
+        color: #0c0c0e;
+        background: #c97b4a;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 0.2px;
+        border-radius: 4px;
+      }
+      .btn-primary:hover {
+        background: #d98a5a;
+      }
+      .btn-primary:active {
+        transform: scale(0.98);
+      }
+      .btn-outline {
+        display: inline-block;
+        padding: 10px 24px;
+        font-size: 12px;
+        font-weight: 400;
+        color: rgba(176, 174, 184, 0.55);
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        letter-spacing: 0.2px;
+        border-radius: 4px;
+      }
+      .btn-outline:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        color: rgba(176, 174, 184, 0.8);
+      }
+      .btn-outline:active {
+        transform: scale(0.98);
+      }
 
-  /* ===== STATS — horizontal strip ===== */
-  .stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-  .stat {
-    padding: 32px 48px;
-  }
-  .stat:not(:last-child) {
-    border-right: 1px solid rgba(255,255,255,0.04);
-  }
-  .stat-val {
-    font-size: 22px;
-    font-weight: 600;
-    color: #dddbe3;
-    letter-spacing: -0.8px;
-    margin-bottom: 4px;
-  }
-  .stat-desc {
-    font-size: 11px;
-    color: rgba(176,174,184,0.3);
-    letter-spacing: 0.3px;
-    font-weight: 400;
-  }
+      /* ===== STATS — horizontal strip ===== */
+      .stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .stat {
+        padding: 32px 48px;
+      }
+      .stat:not(:last-child) {
+        border-right: 1px solid rgba(255, 255, 255, 0.04);
+      }
+      .stat-val {
+        font-size: 22px;
+        font-weight: 600;
+        color: #dddbe3;
+        letter-spacing: -0.8px;
+        margin-bottom: 4px;
+      }
+      .stat-desc {
+        font-size: 11px;
+        color: rgba(176, 174, 184, 0.3);
+        letter-spacing: 0.3px;
+        font-weight: 400;
+      }
 
-  /* ===== FEATURES — 2-row asymmetric bento ===== */
-  .features {
-    padding: 56px 48px 48px;
-  }
-  .features-label {
-    font-size: 9px;
-    font-weight: 500;
-    letter-spacing: 2.5px;
-    text-transform: uppercase;
-    color: rgba(176,174,184,0.25);
-    margin-bottom: 36px;
-  }
+      /* ===== FEATURES — 2-row asymmetric bento ===== */
+      .features {
+        padding: 56px 48px 48px;
+      }
+      .features-label {
+        font-size: 9px;
+        font-weight: 500;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: rgba(176, 174, 184, 0.25);
+        margin-bottom: 36px;
+      }
 
-  /* Row 1: 2fr 1fr — two items */
-  .feat-row-1 {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1px;
-    margin-bottom: 1px;
-  }
-  /* Row 2: 1fr 1fr — two items */
-  .feat-row-2 {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1px;
-    margin-bottom: 1px;
-  }
-  /* Row 3: 1fr 2fr — two items */
-  .feat-row-3 {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1px;
-  }
+      /* Row 1: 2fr 1fr — two items */
+      .feat-row-1 {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 1px;
+        margin-bottom: 1px;
+      }
+      /* Row 2: 1fr 1fr — two items */
+      .feat-row-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1px;
+        margin-bottom: 1px;
+      }
+      /* Row 3: 1fr 2fr — two items */
+      .feat-row-3 {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 1px;
+      }
 
-  .feat-cell {
-    background: #101013;
-    padding: 32px 28px;
-    border: 1px solid rgba(255,255,255,0.03);
-  }
-  .feat-cell:hover {
-    background: #131316;
-  }
-  .feat-idx {
-    font-size: 9px;
-    font-weight: 400;
-    color: rgba(176,174,184,0.2);
-    letter-spacing: 1px;
-    margin-bottom: 16px;
-  }
-  .feat-name {
-    font-size: 14px;
-    font-weight: 500;
-    color: #dddbe3;
-    letter-spacing: -0.2px;
-    margin-bottom: 8px;
-  }
-  .feat-desc {
-    font-size: 12px;
-    line-height: 1.7;
-    color: rgba(176,174,184,0.35);
-    font-weight: 300;
-    max-width: 44ch;
-  }
+      .feat-cell {
+        background: #101013;
+        padding: 32px 28px;
+        border: 1px solid rgba(255, 255, 255, 0.03);
+      }
+      .feat-cell:hover {
+        background: #131316;
+      }
+      .feat-idx {
+        font-size: 9px;
+        font-weight: 400;
+        color: rgba(176, 174, 184, 0.2);
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+      }
+      .feat-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #dddbe3;
+        letter-spacing: -0.2px;
+        margin-bottom: 8px;
+      }
+      .feat-desc {
+        font-size: 12px;
+        line-height: 1.7;
+        color: rgba(176, 174, 184, 0.35);
+        font-weight: 300;
+        max-width: 44ch;
+      }
 
-  /* ===== BOTTOM CTA — left-heavy ===== */
-  .bottom-cta {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    padding: 64px 48px 56px;
-    border-top: 1px solid rgba(255,255,255,0.05);
-  }
-  .bottom-cta-content h2 {
-    font-size: 24px;
-    font-weight: 600;
-    color: #dddbe3;
-    letter-spacing: -0.8px;
-    margin-bottom: 10px;
-    line-height: 1.2;
-  }
-  .bottom-cta-content p {
-    font-size: 12px;
-    color: rgba(176,174,184,0.3);
-    margin-bottom: 24px;
-    font-weight: 300;
-    line-height: 1.7;
-    max-width: 36ch;
-  }
-  .bottom-cta-spacer {
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-bottom: 4px;
-  }
-  .bottom-cta-spacer span {
-    font-size: 10px;
-    color: rgba(176,174,184,0.15);
-    letter-spacing: 0.5px;
-  }
+      /* ===== BOTTOM CTA — left-heavy ===== */
+      .bottom-cta {
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        padding: 64px 48px 56px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .bottom-cta-content h2 {
+        font-size: 24px;
+        font-weight: 600;
+        color: #dddbe3;
+        letter-spacing: -0.8px;
+        margin-bottom: 10px;
+        line-height: 1.2;
+      }
+      .bottom-cta-content p {
+        font-size: 12px;
+        color: rgba(176, 174, 184, 0.3);
+        margin-bottom: 24px;
+        font-weight: 300;
+        line-height: 1.7;
+        max-width: 36ch;
+      }
+      .bottom-cta-spacer {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding-bottom: 4px;
+      }
+      .bottom-cta-spacer span {
+        font-size: 10px;
+        color: rgba(176, 174, 184, 0.15);
+        letter-spacing: 0.5px;
+      }
 
-  /* ===== FOOTER ===== */
-  footer {
-    padding: 20px 48px;
-    font-size: 10px;
-    color: rgba(176,174,184,0.15);
-    border-top: 1px solid rgba(255,255,255,0.04);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  footer a {
-    color: rgba(176,174,184,0.15);
-  }
-  footer a:hover {
-    color: rgba(176,174,184,0.35);
-  }
+      /* ===== FOOTER ===== */
+      footer {
+        padding: 20px 48px;
+        font-size: 10px;
+        color: rgba(176, 174, 184, 0.15);
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer a {
+        color: rgba(176, 174, 184, 0.15);
+      }
+      footer a:hover {
+        color: rgba(176, 174, 184, 0.35);
+      }
 
-  /* ===== MOBILE COLLAPSE ===== */
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
-    nav ul { gap: 16px; }
-    .hero {
-      grid-template-columns: 1fr;
-      min-height: auto;
-    }
-    .hero-left {
-      padding: 48px 20px 32px;
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .hero-right {
-      padding: 32px 20px 48px;
-    }
-    .stats {
-      grid-template-columns: 1fr;
-    }
-    .stat:not(:last-child) {
-      border-right: none;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
-    }
-    .stat { padding: 24px 20px; }
-    .features { padding: 40px 20px 32px; }
-    .feat-row-1,
-    .feat-row-2,
-    .feat-row-3 {
-      grid-template-columns: 1fr;
-    }
-    .bottom-cta {
-      grid-template-columns: 1fr;
-      padding: 48px 20px 40px;
-    }
-    .bottom-cta-spacer { display: none; }
-    footer {
-      padding: 16px 20px;
-      flex-direction: column;
-      gap: 8px;
-      align-items: flex-start;
-    }
-  }
-</style>
-</head>
-<body>
+      /* ===== MOBILE COLLAPSE ===== */
+      @media (max-width: 768px) {
+        nav {
+          padding: 0 20px;
+        }
+        nav ul {
+          gap: 16px;
+        }
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+        }
+        .hero-left {
+          padding: 48px 20px 32px;
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .hero-right {
+          padding: 32px 20px 48px;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+        }
+        .stat:not(:last-child) {
+          border-right: none;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .stat {
+          padding: 24px 20px;
+        }
+        .features {
+          padding: 40px 20px 32px;
+        }
+        .feat-row-1,
+        .feat-row-2,
+        .feat-row-3 {
+          grid-template-columns: 1fr;
+        }
+        .bottom-cta {
+          grid-template-columns: 1fr;
+          padding: 48px 20px 40px;
+        }
+        .bottom-cta-spacer {
+          display: none;
+        }
+        footer {
+          padding: 16px 20px;
+          flex-direction: column;
+          gap: 8px;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">NexusAI<span class="logo-dot"></span></div>
+      <ul>
+        <li><a href="#features">Platform</a></li>
+        <li><a href="#enterprise">Enterprise</a></li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#start" class="nav-cta-link">Get Started Free</a></li>
+      </ul>
+    </nav>
 
-<nav>
-  <div class="logo">NexusAI<span class="logo-dot"></span></div>
-  <ul>
-    <li><a href="#features">Platform</a></li>
-    <li><a href="#enterprise">Enterprise</a></li>
-    <li><a href="#docs">Docs</a></li>
-    <li><a href="#start" class="nav-cta-link">Get Started Free</a></li>
-  </ul>
-</nav>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-tag">AI-Powered Workflow Platform</div>
+        <h1>Transform how your team works <em>with AI</em></h1>
+      </div>
+      <div class="hero-right">
+        <p>
+          NexusAI orchestrates intelligent agents across your entire stack. Your team stops
+          context-switching and starts shipping what matters.
+        </p>
+        <div class="hero-actions">
+          <a href="#" class="btn-primary">Get Started Free</a>
+          <a href="#" class="btn-outline">View Documentation</a>
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="hero-tag">AI-Powered Workflow Platform</div>
-    <h1>Transform how your team works <em>with AI</em></h1>
-  </div>
-  <div class="hero-right">
-    <p>NexusAI orchestrates intelligent agents across your entire stack. Your team stops context-switching and starts shipping what matters.</p>
-    <div class="hero-actions">
-      <a href="#" class="btn-primary">Get Started Free</a>
-      <a href="#" class="btn-outline">View Documentation</a>
-    </div>
-  </div>
-</section>
+    <section class="stats">
+      <div class="stat">
+        <div class="stat-val">10,000+</div>
+        <div class="stat-desc">Enterprises running NexusAI</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">200+</div>
+        <div class="stat-desc">Workflow scenarios covered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-val">SOC 2</div>
+        <div class="stat-desc">Certified and audit-ready</div>
+      </div>
+    </section>
 
-<section class="stats">
-  <div class="stat">
-    <div class="stat-val">10,000+</div>
-    <div class="stat-desc">Enterprises running NexusAI</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">200+</div>
-    <div class="stat-desc">Workflow scenarios covered</div>
-  </div>
-  <div class="stat">
-    <div class="stat-val">SOC 2</div>
-    <div class="stat-desc">Certified and audit-ready</div>
-  </div>
-</section>
+    <section class="features" id="features">
+      <div class="features-label">Core Capabilities</div>
 
-<section class="features" id="features">
-  <div class="features-label">Core Capabilities</div>
+      <div class="feat-row-1">
+        <div class="feat-cell">
+          <div class="feat-idx">01</div>
+          <div class="feat-name">Intelligent Agent Orchestration</div>
+          <div class="feat-desc">
+            Deploy autonomous agents that coordinate multi-step tasks across your toolchain. No
+            manual handoffs, no brittle scripts.
+          </div>
+        </div>
+        <div class="feat-cell">
+          <div class="feat-idx">02</div>
+          <div class="feat-name">Enterprise Knowledge Graph</div>
+          <div class="feat-desc">
+            A living map of organizational context that agents query to ground every decision in
+            your data.
+          </div>
+        </div>
+      </div>
 
-  <div class="feat-row-1">
-    <div class="feat-cell">
-      <div class="feat-idx">01</div>
-      <div class="feat-name">Intelligent Agent Orchestration</div>
-      <div class="feat-desc">Deploy autonomous agents that coordinate multi-step tasks across your toolchain. No manual handoffs, no brittle scripts.</div>
-    </div>
-    <div class="feat-cell">
-      <div class="feat-idx">02</div>
-      <div class="feat-name">Enterprise Knowledge Graph</div>
-      <div class="feat-desc">A living map of organizational context that agents query to ground every decision in your data.</div>
-    </div>
-  </div>
+      <div class="feat-row-2">
+        <div class="feat-cell">
+          <div class="feat-idx">03</div>
+          <div class="feat-name">Agentic Workflow Engine</div>
+          <div class="feat-desc">
+            Define workflows declaratively. The engine handles retries, branching logic, and
+            human-in-the-loop approvals automatically.
+          </div>
+        </div>
+        <div class="feat-cell">
+          <div class="feat-idx">04</div>
+          <div class="feat-name">Multi-Modal Understanding</div>
+          <div class="feat-desc">
+            Process documents, images, audio, and structured data within a unified reasoning
+            pipeline.
+          </div>
+        </div>
+      </div>
 
-  <div class="feat-row-2">
-    <div class="feat-cell">
-      <div class="feat-idx">03</div>
-      <div class="feat-name">Agentic Workflow Engine</div>
-      <div class="feat-desc">Define workflows declaratively. The engine handles retries, branching logic, and human-in-the-loop approvals automatically.</div>
-    </div>
-    <div class="feat-cell">
-      <div class="feat-idx">04</div>
-      <div class="feat-name">Multi-Modal Understanding</div>
-      <div class="feat-desc">Process documents, images, audio, and structured data within a unified reasoning pipeline.</div>
-    </div>
-  </div>
+      <div class="feat-row-3">
+        <div class="feat-cell">
+          <div class="feat-idx">05</div>
+          <div class="feat-name">Real-Time Collaboration</div>
+          <div class="feat-desc">
+            Human and AI teammates in the same workspace with shared context and live state updates.
+          </div>
+        </div>
+        <div class="feat-cell">
+          <div class="feat-idx">06</div>
+          <div class="feat-name">Enterprise-Grade Security</div>
+          <div class="feat-desc">
+            SOC 2 certified. Role-based access, complete audit logs, and data residency controls
+            ship by default.
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="feat-row-3">
-    <div class="feat-cell">
-      <div class="feat-idx">05</div>
-      <div class="feat-name">Real-Time Collaboration</div>
-      <div class="feat-desc">Human and AI teammates in the same workspace with shared context and live state updates.</div>
-    </div>
-    <div class="feat-cell">
-      <div class="feat-idx">06</div>
-      <div class="feat-name">Enterprise-Grade Security</div>
-      <div class="feat-desc">SOC 2 certified. Role-based access, complete audit logs, and data residency controls ship by default.</div>
-    </div>
-  </div>
-</section>
+    <section class="bottom-cta">
+      <div class="bottom-cta-content">
+        <h2>Ready to stop<br />working around your tools?</h2>
+        <p>
+          Join 10,000+ teams that replaced scattered integrations with a single intelligent layer.
+        </p>
+        <a href="#" class="btn-primary">Get Started Free</a>
+      </div>
+      <div class="bottom-cta-spacer">
+        <span>No credit card required</span>
+      </div>
+    </section>
 
-<section class="bottom-cta">
-  <div class="bottom-cta-content">
-    <h2>Ready to stop<br>working around your tools?</h2>
-    <p>Join 10,000+ teams that replaced scattered integrations with a single intelligent layer.</p>
-    <a href="#" class="btn-primary">Get Started Free</a>
-  </div>
-  <div class="bottom-cta-spacer">
-    <span>No credit card required</span>
-  </div>
-</section>
-
-<footer>
-  <span>NexusAI, Inc. 2026</span>
-  <a href="#">Privacy</a>
-</footer>
-
-</body>
+    <footer>
+      <span>NexusAI, Inc. 2026</span>
+      <a href="#">Privacy</a>
+    </footer>
+  </body>
 </html>

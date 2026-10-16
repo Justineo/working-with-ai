@@ -1,442 +1,507 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexusAI — AI-Powered Workflow Platform</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<style>
-  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-  html{
-    scrollbar-width:thin;
-    scrollbar-color:rgba(255,255,255,0.15) transparent;
-    font-size:16px;
-  }
-  html::-webkit-scrollbar{width:6px}
-  html::-webkit-scrollbar-track{background:transparent}
-  html::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.15);border-radius:3px}
-  body{
-    font-family:'Space Grotesk',sans-serif;
-    background:#09090b;
-    color:#e4e4e7;
-    overflow-x:hidden;
-    min-height:100%;
-  }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusAI — AI-Powered Workflow Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+        font-size: 16px;
+      }
+      html::-webkit-scrollbar {
+        width: 6px;
+      }
+      html::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      html::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 3px;
+      }
+      body {
+        font-family: "Space Grotesk", sans-serif;
+        background: #09090b;
+        color: #e4e4e7;
+        overflow-x: hidden;
+        min-height: 100%;
+      }
 
-  /* ── Diagonal beam — the visual anchor ── */
-  .beam{
-    position:fixed;
-    top:-40%;left:-20%;
-    width:160%;height:200%;
-    background:
-      linear-gradient(
-        125deg,
-        transparent 38%,
-        rgba(0,220,220,0.035) 42%,
-        rgba(0,220,220,0.07) 44%,
-        rgba(0,220,220,0.035) 46%,
-        transparent 50%
-      );
-    pointer-events:none;
-    z-index:0;
-    animation:beamDrift 14s ease-in-out infinite alternate;
-  }
-  @keyframes beamDrift{
-    0%{transform:translateX(-3%) translateY(0)}
-    100%{transform:translateX(3%) translateY(-2%)}
-  }
+      /* ── Diagonal beam — the visual anchor ── */
+      .beam {
+        position: fixed;
+        top: -40%;
+        left: -20%;
+        width: 160%;
+        height: 200%;
+        background: linear-gradient(
+          125deg,
+          transparent 38%,
+          rgba(0, 220, 220, 0.035) 42%,
+          rgba(0, 220, 220, 0.07) 44%,
+          rgba(0, 220, 220, 0.035) 46%,
+          transparent 50%
+        );
+        pointer-events: none;
+        z-index: 0;
+        animation: beamDrift 14s ease-in-out infinite alternate;
+      }
+      @keyframes beamDrift {
+        0% {
+          transform: translateX(-3%) translateY(0);
+        }
+        100% {
+          transform: translateX(3%) translateY(-2%);
+        }
+      }
 
-  /* ── Nav ── */
-  nav{
-    position:fixed;top:0;left:0;right:0;
-    z-index:100;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:0 2.5rem;
-    height:3.25rem;
-    background:rgba(9,9,11,0.7);
-    backdrop-filter:blur(16px);
-    -webkit-backdrop-filter:blur(16px);
-    border-bottom:1px solid rgba(255,255,255,0.06);
-  }
-  .nav-brand{
-    font-family:'JetBrains Mono',monospace;
-    font-weight:500;
-    font-size:0.85rem;
-    letter-spacing:0.08em;
-    color:#fff;
-    text-transform:uppercase;
-  }
-  .nav-brand span{
-    color:#00dcd0;
-  }
-  nav ul{
-    list-style:none;
-    display:flex;
-    align-items:center;
-    gap:1.75rem;
-    height:100%;
-  }
-  nav li{
-    display:flex;
-    align-items:center;
-    height:100%;
-  }
-  nav a{
-    font-size:0.78rem;
-    color:rgba(255,255,255,0.5);
-    text-decoration:none;
-    letter-spacing:0.03em;
-    transition:color 0.25s;
-    position:relative;
-    display:flex;
-    align-items:center;
-    height:100%;
-  }
-  nav a::after{
-    content:'';
-    position:absolute;
-    bottom:0;left:0;right:0;
-    height:1px;
-    background:#00dcd0;
-    transform:scaleX(0);
-    transform-origin:left;
-    transition:transform 0.3s cubic-bezier(0.16,1,0.3,1);
-  }
-  nav a:hover{color:#fff}
-  nav a:hover::after{transform:scaleX(1)}
+      /* ── Nav ── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        height: 3.25rem;
+        background: rgba(9, 9, 11, 0.7);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .nav-brand {
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 500;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      .nav-brand span {
+        color: #00dcd0;
+      }
+      nav ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 1.75rem;
+        height: 100%;
+      }
+      nav li {
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      nav a {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition: color 0.25s;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 100%;
+      }
+      nav a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #00dcd0;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      nav a:hover {
+        color: #fff;
+      }
+      nav a:hover::after {
+        transform: scaleX(1);
+      }
 
-  /* ── Hero ── */
-  .hero{
-    position:relative;
-    z-index:1;
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    padding:3.25rem 2.5rem 0;
-  }
-  .hero-inner{
-    max-width:42rem;
-    animation:fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) both;
-  }
-  @keyframes fadeUp{
-    0%{opacity:0;transform:translateY(2rem)}
-    100%{opacity:1;transform:translateY(0)}
-  }
-  .hero-label{
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.7rem;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:#00dcd0;
-    margin-bottom:1.5rem;
-    opacity:0.85;
-  }
-  h1{
-    font-size:clamp(3rem,7vw,5.5rem);
-    font-weight:700;
-    line-height:0.95;
-    letter-spacing:-0.035em;
-    color:#fff;
-    margin-bottom:1.25rem;
-  }
-  h1 em{
-    font-style:normal;
-    background:linear-gradient(135deg,#00dcd0,#0090ff);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    background-clip:text;
-  }
-  .hero-sub{
-    font-size:1.05rem;
-    line-height:1.55;
-    color:rgba(255,255,255,0.45);
-    max-width:28rem;
-    margin-bottom:2.25rem;
-  }
-  .cta{
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.78rem;
-    font-weight:500;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    text-decoration:none;
-    color:#09090b;
-    background:#00dcd0;
-    padding:0.85rem 2rem;
-    border:none;
-    position:relative;
-    overflow:hidden;
-    animation:ctaPulse 3s ease-in-out infinite;
-  }
-  @keyframes ctaPulse{
-    0%,100%{box-shadow:0 0 0 0 rgba(0,220,208,0.25)}
-    50%{box-shadow:0 0 24px 4px rgba(0,220,208,0.15)}
-  }
-  .cta:hover{
-    background:#fff;
-    color:#09090b;
-  }
+      /* ── Hero ── */
+      .hero {
+        position: relative;
+        z-index: 1;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 3.25rem 2.5rem 0;
+      }
+      .hero-inner {
+        max-width: 42rem;
+        animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      @keyframes fadeUp {
+        0% {
+          opacity: 0;
+          transform: translateY(2rem);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      .hero-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.7rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #00dcd0;
+        margin-bottom: 1.5rem;
+        opacity: 0.85;
+      }
+      h1 {
+        font-size: clamp(3rem, 7vw, 5.5rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.035em;
+        color: #fff;
+        margin-bottom: 1.25rem;
+      }
+      h1 em {
+        font-style: normal;
+        background: linear-gradient(135deg, #00dcd0, #0090ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .hero-sub {
+        font-size: 1.05rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.45);
+        max-width: 28rem;
+        margin-bottom: 2.25rem;
+      }
+      .cta {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #09090b;
+        background: #00dcd0;
+        padding: 0.85rem 2rem;
+        border: none;
+        position: relative;
+        overflow: hidden;
+        animation: ctaPulse 3s ease-in-out infinite;
+      }
+      @keyframes ctaPulse {
+        0%,
+        100% {
+          box-shadow: 0 0 0 0 rgba(0, 220, 208, 0.25);
+        }
+        50% {
+          box-shadow: 0 0 24px 4px rgba(0, 220, 208, 0.15);
+        }
+      }
+      .cta:hover {
+        background: #fff;
+        color: #09090b;
+      }
 
-  /* ── Stats strip ── */
-  .stats{
-    position:relative;
-    z-index:1;
-    display:flex;
-    gap:3rem;
-    padding:3rem 2.5rem;
-    border-top:1px solid rgba(255,255,255,0.06);
-    border-bottom:1px solid rgba(255,255,255,0.06);
-    animation:fadeUp 1.2s 0.3s cubic-bezier(0.16,1,0.3,1) both;
-  }
-  .stat{
-    display:flex;
-    flex-direction:column;
-    gap:0.25rem;
-  }
-  .stat-value{
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.85rem;
-    font-weight:500;
-    color:#fff;
-    letter-spacing:0.04em;
-  }
-  .stat-label{
-    font-size:0.7rem;
-    color:rgba(255,255,255,0.3);
-    letter-spacing:0.04em;
-    text-transform:uppercase;
-  }
+      /* ── Stats strip ── */
+      .stats {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: 3rem;
+        padding: 3rem 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        animation: fadeUp 1.2s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+      .stat-value {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #fff;
+        letter-spacing: 0.04em;
+      }
+      .stat-label {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
 
-  /* ── Capabilities ── */
-  .capabilities{
-    position:relative;
-    z-index:1;
-    padding:4rem 2.5rem;
-    animation:fadeUp 1.2s 0.5s cubic-bezier(0.16,1,0.3,1) both;
-  }
-  .cap-header{
-    display:flex;
-    align-items:baseline;
-    justify-content:space-between;
-    margin-bottom:2.5rem;
-  }
-  .cap-header h2{
-    font-size:0.7rem;
-    font-weight:500;
-    letter-spacing:0.18em;
-    text-transform:uppercase;
-    color:rgba(255,255,255,0.3);
-  }
-  .cap-header span{
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.65rem;
-    color:rgba(255,255,255,0.15);
-    letter-spacing:0.06em;
-  }
-  .cap-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:0;
-  }
-  .cap-item{
-    padding:1.25rem 0;
-    border-top:1px solid rgba(255,255,255,0.06);
-    display:flex;
-    align-items:baseline;
-    gap:1rem;
-  }
-  .cap-item:nth-child(odd){padding-right:2rem}
-  .cap-item:nth-child(even){padding-left:2rem;border-left:1px solid rgba(255,255,255,0.06)}
-  .cap-num{
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.65rem;
-    color:rgba(0,220,208,0.5);
-    letter-spacing:0.04em;
-    flex-shrink:0;
-    min-width:1.5rem;
-  }
-  .cap-text{
-    display:flex;
-    flex-direction:column;
-    gap:0.3rem;
-  }
-  .cap-name{
-    font-size:0.9rem;
-    font-weight:600;
-    color:#fff;
-    letter-spacing:-0.01em;
-  }
-  .cap-desc{
-    font-size:0.75rem;
-    color:rgba(255,255,255,0.3);
-    line-height:1.5;
-  }
+      /* ── Capabilities ── */
+      .capabilities {
+        position: relative;
+        z-index: 1;
+        padding: 4rem 2.5rem;
+        animation: fadeUp 1.2s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .cap-header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 2.5rem;
+      }
+      .cap-header h2 {
+        font-size: 0.7rem;
+        font-weight: 500;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+      }
+      .cap-header span {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.15);
+        letter-spacing: 0.06em;
+      }
+      .cap-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+      }
+      .cap-item {
+        padding: 1.25rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+      }
+      .cap-item:nth-child(odd) {
+        padding-right: 2rem;
+      }
+      .cap-item:nth-child(even) {
+        padding-left: 2rem;
+        border-left: 1px solid rgba(255, 255, 255, 0.06);
+      }
+      .cap-num {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.65rem;
+        color: rgba(0, 220, 208, 0.5);
+        letter-spacing: 0.04em;
+        flex-shrink: 0;
+        min-width: 1.5rem;
+      }
+      .cap-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+      .cap-name {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #fff;
+        letter-spacing: -0.01em;
+      }
+      .cap-desc {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.3);
+        line-height: 1.5;
+      }
 
-  /* ── Final CTA ── */
-  .final{
-    position:relative;
-    z-index:1;
-    padding:4rem 2.5rem 3rem;
-    border-top:1px solid rgba(255,255,255,0.06);
-    animation:fadeUp 1.2s 0.7s cubic-bezier(0.16,1,0.3,1) both;
-  }
-  .final-inner{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-  }
-  .final h2{
-    font-size:clamp(1.5rem,3.5vw,2.5rem);
-    font-weight:700;
-    letter-spacing:-0.03em;
-    color:#fff;
-    line-height:1.1;
-  }
-  .final h2 span{
-    color:rgba(255,255,255,0.25);
-  }
-  .cta-secondary{
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace;
-    font-size:0.75rem;
-    font-weight:500;
-    letter-spacing:0.08em;
-    text-transform:uppercase;
-    text-decoration:none;
-    color:#fff;
-    border:1px solid rgba(255,255,255,0.15);
-    padding:0.8rem 1.75rem;
-    transition:border-color 0.3s, background 0.3s;
-    flex-shrink:0;
-  }
-  .cta-secondary:hover{
-    border-color:#00dcd0;
-    background:rgba(0,220,208,0.06);
-  }
+      /* ── Final CTA ── */
+      .final {
+        position: relative;
+        z-index: 1;
+        padding: 4rem 2.5rem 3rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        animation: fadeUp 1.2s 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+      }
+      .final-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .final h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: #fff;
+        line-height: 1.1;
+      }
+      .final h2 span {
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .cta-secondary {
+        display: inline-block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        padding: 0.8rem 1.75rem;
+        transition:
+          border-color 0.3s,
+          background 0.3s;
+        flex-shrink: 0;
+      }
+      .cta-secondary:hover {
+        border-color: #00dcd0;
+        background: rgba(0, 220, 208, 0.06);
+      }
 
-  /* ── Footer ── */
-  footer{
-    position:relative;
-    z-index:1;
-    padding:1.5rem 2.5rem;
-    border-top:1px solid rgba(255,255,255,0.04);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-  }
-  footer span{
-    font-size:0.65rem;
-    color:rgba(255,255,255,0.15);
-    letter-spacing:0.04em;
-  }
-</style>
-</head>
-<body>
+      /* ── Footer ── */
+      footer {
+        position: relative;
+        z-index: 1;
+        padding: 1.5rem 2.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer span {
+        font-size: 0.65rem;
+        color: rgba(255, 255, 255, 0.15);
+        letter-spacing: 0.04em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="beam"></div>
 
-<div class="beam"></div>
+    <nav>
+      <div class="nav-brand">Nexus<span>AI</span></div>
+      <ul>
+        <li><a href="#">Platform</a></li>
+        <li><a href="#">Enterprise</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">Pricing</a></li>
+      </ul>
+    </nav>
 
-<nav>
-  <div class="nav-brand">Nexus<span>AI</span></div>
-  <ul>
-    <li><a href="#">Platform</a></li>
-    <li><a href="#">Enterprise</a></li>
-    <li><a href="#">Docs</a></li>
-    <li><a href="#">Pricing</a></li>
-  </ul>
-</nav>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-label">AI-Powered Workflow Platform</div>
+        <h1>Transform how your team works with <em>AI</em></h1>
+        <p class="hero-sub">
+          Orchestrate intelligent agents across your entire organization. One platform, every
+          workflow.
+        </p>
+        <a href="#" class="cta">Get Started Free</a>
+      </div>
+    </section>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-label">AI-Powered Workflow Platform</div>
-    <h1>Transform how your team works with <em>AI</em></h1>
-    <p class="hero-sub">Orchestrate intelligent agents across your entire organization. One platform, every workflow.</p>
-    <a href="#" class="cta">Get Started Free</a>
-  </div>
-</section>
-
-<div class="stats">
-  <div class="stat">
-    <span class="stat-value">10,000+</span>
-    <span class="stat-label">Enterprises</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">200+</span>
-    <span class="stat-label">Scenarios</span>
-  </div>
-  <div class="stat">
-    <span class="stat-value">SOC 2</span>
-    <span class="stat-label">Certified</span>
-  </div>
-</div>
-
-<section class="capabilities">
-  <div class="cap-header">
-    <h2>Capabilities</h2>
-    <span>06 modules</span>
-  </div>
-  <div class="cap-grid">
-    <div class="cap-item">
-      <span class="cap-num">01</span>
-      <div class="cap-text">
-        <span class="cap-name">Intelligent Agent Orchestration</span>
-        <span class="cap-desc">Deploy and coordinate autonomous agents that reason, plan, and execute across systems.</span>
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-value">10,000+</span>
+        <span class="stat-label">Enterprises</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">200+</span>
+        <span class="stat-label">Scenarios</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value">SOC 2</span>
+        <span class="stat-label">Certified</span>
       </div>
     </div>
-    <div class="cap-item">
-      <span class="cap-num">02</span>
-      <div class="cap-text">
-        <span class="cap-name">Enterprise Knowledge Graph</span>
-        <span class="cap-desc">Unified semantic layer connecting every document, dataset, and decision in your org.</span>
-      </div>
-    </div>
-    <div class="cap-item">
-      <span class="cap-num">03</span>
-      <div class="cap-text">
-        <span class="cap-name">Agentic Workflow Engine</span>
-        <span class="cap-desc">Build multi-step, branching workflows that adapt in real time to changing inputs.</span>
-      </div>
-    </div>
-    <div class="cap-item">
-      <span class="cap-num">04</span>
-      <div class="cap-text">
-        <span class="cap-name">Multi-Modal Understanding</span>
-        <span class="cap-desc">Process text, images, audio, and structured data within a single pipeline.</span>
-      </div>
-    </div>
-    <div class="cap-item">
-      <span class="cap-num">05</span>
-      <div class="cap-text">
-        <span class="cap-name">Real-Time Collaboration</span>
-        <span class="cap-desc">Humans and agents working in the same workspace, with full audit trails.</span>
-      </div>
-    </div>
-    <div class="cap-item">
-      <span class="cap-num">06</span>
-      <div class="cap-text">
-        <span class="cap-name">Enterprise-Grade Security</span>
-        <span class="cap-desc">SOC 2, SSO, RBAC, and end-to-end encryption. Your data never leaves your boundary.</span>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="final">
-  <div class="final-inner">
-    <h2>Ready to ship <span>smarter?</span></h2>
-    <a href="#" class="cta-secondary">Get Started Free</a>
-  </div>
-</section>
+    <section class="capabilities">
+      <div class="cap-header">
+        <h2>Capabilities</h2>
+        <span>06 modules</span>
+      </div>
+      <div class="cap-grid">
+        <div class="cap-item">
+          <span class="cap-num">01</span>
+          <div class="cap-text">
+            <span class="cap-name">Intelligent Agent Orchestration</span>
+            <span class="cap-desc"
+              >Deploy and coordinate autonomous agents that reason, plan, and execute across
+              systems.</span
+            >
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">02</span>
+          <div class="cap-text">
+            <span class="cap-name">Enterprise Knowledge Graph</span>
+            <span class="cap-desc"
+              >Unified semantic layer connecting every document, dataset, and decision in your
+              org.</span
+            >
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">03</span>
+          <div class="cap-text">
+            <span class="cap-name">Agentic Workflow Engine</span>
+            <span class="cap-desc"
+              >Build multi-step, branching workflows that adapt in real time to changing
+              inputs.</span
+            >
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">04</span>
+          <div class="cap-text">
+            <span class="cap-name">Multi-Modal Understanding</span>
+            <span class="cap-desc"
+              >Process text, images, audio, and structured data within a single pipeline.</span
+            >
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">05</span>
+          <div class="cap-text">
+            <span class="cap-name">Real-Time Collaboration</span>
+            <span class="cap-desc"
+              >Humans and agents working in the same workspace, with full audit trails.</span
+            >
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-num">06</span>
+          <div class="cap-text">
+            <span class="cap-name">Enterprise-Grade Security</span>
+            <span class="cap-desc"
+              >SOC 2, SSO, RBAC, and end-to-end encryption. Your data never leaves your
+              boundary.</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
 
-<footer>
-  <span>&copy; 2026 NexusAI, Inc.</span>
-  <span>San Francisco, CA</span>
-</footer>
+    <section class="final">
+      <div class="final-inner">
+        <h2>Ready to ship <span>smarter?</span></h2>
+        <a href="#" class="cta-secondary">Get Started Free</a>
+      </div>
+    </section>
 
-</body>
+    <footer>
+      <span>&copy; 2026 NexusAI, Inc.</span>
+      <span>San Francisco, CA</span>
+    </footer>
+  </body>
 </html>
