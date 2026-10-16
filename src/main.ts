@@ -22,9 +22,13 @@ const i18n = {
       { emoji: "🎸💀🌺🇲🇽👦🐕🌉🎶💜🦴🎭👴📸🌮🎺🕯️👻🌼🎪🦋💛🌅", answer: "寻梦环游记 Coco" },
       { emoji: "☄️🏙️🏔️👧👦🔄💫🎀📱✨🌅💧🕐🗾🎐🧵🌸💕🚃🔔🌌🪢", answer: "你的名字 Your Name" },
       { emoji: "🦑🎮👔💸🔴🟢🪆🍬📐🔫🦺🛏️🪜🎭💀⭕🔺🟥💉🌉🏆💰", answer: "鱿鱼游戏 Squid Game" },
-      { emoji: "🦇🃏🏙️💣🔥🚔🏥💰🎭🪙🤡🚗💀🏢🗡️⚖️🌃🦸‍♂️🚁📞🎪🌑", answer: "蝙蝠侠：黑暗骑士 The Dark Knight" },
+      {
+        emoji: "🦇🃏🏙️💣🔥🚔🏥💰🎭🪙🤡🚗💀🏢🗡️⚖️🌃🦸‍♂️🚁📞🎪🌑",
+        answer: "蝙蝠侠：黑暗骑士 The Dark Knight",
+      },
     ],
-    quizPrompt: "我们来玩 emoji 猜影视作品。规则：1. 你只能用 emoji 输出，不能用文字，除非我说放弃当前题目。2. 每部作品用 22 个 emoji 表达一个经典桥段。3. 我猜对了自动下一题，猜错了给提示。选择要跳跃一点。",
+    quizPrompt:
+      "我们来玩 emoji 猜影视作品。规则：1. 你只能用 emoji 输出，不能用文字，除非我说放弃当前题目。2. 每部作品用 22 个 emoji 表达一个经典桥段。3. 我猜对了自动下一题，猜错了给提示。选择要跳跃一点。",
     copied: "已复制 ✓",
     copyPrompt: "复制 Prompt",
   },
@@ -45,7 +49,8 @@ const i18n = {
       { emoji: "🦑🎮👔💸🔴🟢🪆🍬📐🔫🦺🛏️🪜🎭💀⭕🔺🟥💉🌉🏆💰", answer: "Squid Game" },
       { emoji: "🦇🃏🏙️💣🔥🚔🏥💰🎭🪙🤡🚗💀🏢🗡️⚖️🌃🦸‍♂️🚁📞🎪🌑", answer: "The Dark Knight" },
     ],
-    quizPrompt: "Let's play emoji movie guessing! Rules: 1. You can only output emoji, no text, unless I give up. 2. Use 22 emoji per movie depicting an iconic scene. 3. Auto next if I guess right, give hints if wrong. Be creative with your choices.",
+    quizPrompt:
+      "Let's play emoji movie guessing! Rules: 1. You can only output emoji, no text, unless I give up. 2. Use 22 emoji per movie depicting an iconic scene. 3. Auto next if I guess right, give hints if wrong. Be creative with your choices.",
     copied: "Copied ✓",
     copyPrompt: "Copy Prompt",
   },
@@ -64,9 +69,9 @@ let current = 0;
 const fragmentState = new Map<number, number>();
 
 function getFragments(slideIdx: number): HTMLElement[] {
-  return Array.from(
-    slides[slideIdx].querySelectorAll<HTMLElement>("[data-f]"),
-  ).sort((a, b) => Number(a.dataset.f) - Number(b.dataset.f));
+  return Array.from(slides[slideIdx].querySelectorAll<HTMLElement>("[data-f]")).sort(
+    (a, b) => Number(a.dataset.f) - Number(b.dataset.f),
+  );
 }
 
 function maxFragment(slideIdx: number): number {
@@ -84,9 +89,7 @@ function currentFragment(slideIdx: number): number {
 function showFragmentsUpTo(slideIdx: number, n: number) {
   const frags = getFragments(slideIdx);
   // Get sorted unique fragment values
-  const vals = [...new Set(frags.map((el) => Number(el.dataset.f)))].sort(
-    (a, b) => a - b,
-  );
+  const vals = [...new Set(frags.map((el) => Number(el.dataset.f)))].sort((a, b) => a - b);
   const visibleVals = new Set(vals.slice(0, n));
   frags.forEach((el) => {
     el.classList.toggle("f-visible", visibleVals.has(Number(el.dataset.f)));
@@ -114,10 +117,7 @@ function goto(index: number, direction?: "forward" | "backward") {
     showFragmentsUpTo(clamped, 0);
   }
   updateProgress();
-  setTimeout(
-    () => slides[prevIdx].classList.remove("exit-left", "exit-right"),
-    600,
-  );
+  setTimeout(() => slides[prevIdx].classList.remove("exit-left", "exit-right"), 600);
 }
 
 // Step fragment forward; if at end, go to next slide
@@ -140,7 +140,6 @@ function stepBackward() {
     goto(current - 1, "backward");
   }
 }
-
 
 function updateProgress() {
   const bar = document.getElementById("progress-bar") as HTMLElement | null;
@@ -168,9 +167,12 @@ function parseHash(): { slide: number; fragment: number } | null {
   const slide = parseInt(parts[0], 10) - 1; // 1-indexed → 0-indexed
   if (isNaN(slide) || slide < 0 || slide >= slides.length) return null;
   // "5." (trailing dot, empty after dot) means all fragments
-  const fragment = parts.length > 1 && parts[1] === ""
-    ? maxFragment(slide)
-    : parts[1] ? parseInt(parts[1], 10) : 0;
+  const fragment =
+    parts.length > 1 && parts[1] === ""
+      ? maxFragment(slide)
+      : parts[1]
+        ? parseInt(parts[1], 10)
+        : 0;
   return { slide, fragment };
 }
 
@@ -227,13 +229,9 @@ function buildOverview() {
     const label = document.createElement("div");
     label.className = "overview-label";
     const titleOverride = slide.dataset.title;
-    const titleEl =
-      slide.querySelector(".title-mega") ||
-      slide.querySelector(".title-large");
-    const titleText = titleOverride ?? (titleEl ? titleEl.textContent?.trim() ?? "" : "");
-    label.textContent = titleText
-      ? `${i + 1}. ${titleText}`
-      : `${i + 1}`;
+    const titleEl = slide.querySelector(".title-mega") || slide.querySelector(".title-large");
+    const titleText = titleOverride ?? (titleEl ? (titleEl.textContent?.trim() ?? "") : "");
+    label.textContent = titleText ? `${i + 1}. ${titleText}` : `${i + 1}`;
     thumb.appendChild(label);
 
     thumb.addEventListener("click", () => {
@@ -362,22 +360,16 @@ function closeOverlay() {
 }
 
 function setupOverlay() {
-  document
-    .getElementById("iframe-close")
-    ?.addEventListener("click", closeOverlay);
-  document
-    .querySelector(".iframe-overlay-bg")
-    ?.addEventListener("click", closeOverlay);
+  document.getElementById("iframe-close")?.addEventListener("click", closeOverlay);
+  document.querySelector(".iframe-overlay-bg")?.addEventListener("click", closeOverlay);
 
-  document
-    .querySelectorAll<HTMLElement>(".clickable[data-url]")
-    .forEach((el) => {
-      el.addEventListener("click", () => {
-        const url = el.dataset.url;
-        const mobile = el.dataset.mobile === "true";
-        if (url) openOverlay(url, mobile);
-      });
+  document.querySelectorAll<HTMLElement>(".clickable[data-url]").forEach((el) => {
+    el.addEventListener("click", () => {
+      const url = el.dataset.url;
+      const mobile = el.dataset.mobile === "true";
+      if (url) openOverlay(url, mobile);
     });
+  });
 }
 
 // ============================================================
@@ -497,13 +489,18 @@ function setupEmojiQuiz() {
 
   // Copy prompt button
   document.getElementById("copy-prompt")?.addEventListener("click", () => {
-    navigator.clipboard.writeText(QUIZ_PROMPT).then(() => {
-      const btn = document.getElementById("copy-prompt")!;
-      btn.textContent = t.copied;
-      setTimeout(() => {
-        btn.textContent = t.copyPrompt;
-      }, 2000);
-    });
+    navigator.clipboard
+      .writeText(QUIZ_PROMPT)
+      .then(() => {
+        const btn = document.getElementById("copy-prompt")!;
+        btn.textContent = t.copied;
+        setTimeout(() => {
+          btn.textContent = t.copyPrompt;
+        }, 2000);
+      })
+      .catch(() => {
+        // Clipboard access can be denied; leave the button ready to retry.
+      });
   });
 }
 
@@ -580,7 +577,9 @@ setupAiTasteToggle();
 setupOverlay();
 
 // Mobile nav bar
-document.getElementById("mnav-prev")?.addEventListener("click", () => goto(current - 1, "backward"));
+document
+  .getElementById("mnav-prev")
+  ?.addEventListener("click", () => goto(current - 1, "backward"));
 document.getElementById("mnav-next")?.addEventListener("click", () => goto(current + 1, "forward"));
 document.getElementById("mnav-up")?.addEventListener("click", () => stepBackward());
 document.getElementById("mnav-down")?.addEventListener("click", () => stepForward());

@@ -1,496 +1,617 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NexusAI - Next-Gen AI-Powered Platform</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexusAI - Next-Gen AI-Powered Platform</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-  html { scrollbar-width: thin; scrollbar-color: rgba(255,255,255,0.2) transparent; }
-  ::-webkit-scrollbar { width: 6px; }
-  ::-webkit-scrollbar-track { background: transparent; }
-  ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 3px; }
+      html {
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+      }
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 3px;
+      }
 
-  body {
-    font-family: 'Inter', 'Noto Sans SC', sans-serif;
-    background: #09060f;
-    color: #e0d8f0;
-    overflow-x: hidden;
-    min-height: 100vh;
-  }
+      body {
+        font-family: "Inter", "Noto Sans SC", sans-serif;
+        background: #09060f;
+        color: #e0d8f0;
+        overflow-x: hidden;
+        min-height: 100vh;
+      }
 
-  /* ===== AURORA / MESH GRADIENT BG ===== */
-  .aurora-bg {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 0;
-    background:
-      radial-gradient(ellipse 80% 60% at 20% 10%, rgba(120, 40, 200, 0.35) 0%, transparent 60%),
-      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(30, 80, 220, 0.3) 0%, transparent 55%),
-      radial-gradient(ellipse 70% 40% at 50% 80%, rgba(160, 30, 180, 0.25) 0%, transparent 50%),
-      radial-gradient(ellipse 50% 50% at 10% 70%, rgba(40, 100, 255, 0.2) 0%, transparent 50%),
-      linear-gradient(170deg, #0a0515 0%, #0d0a1a 40%, #060818 100%);
-    animation: auroraPulse 12s ease-in-out infinite alternate;
-  }
-  @keyframes auroraPulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.85; }
-    100% { opacity: 1; }
-  }
+      /* ===== AURORA / MESH GRADIENT BG ===== */
+      .aurora-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse 80% 60% at 20% 10%, rgba(120, 40, 200, 0.35) 0%, transparent 60%),
+          radial-gradient(ellipse 60% 50% at 80% 20%, rgba(30, 80, 220, 0.3) 0%, transparent 55%),
+          radial-gradient(ellipse 70% 40% at 50% 80%, rgba(160, 30, 180, 0.25) 0%, transparent 50%),
+          radial-gradient(ellipse 50% 50% at 10% 70%, rgba(40, 100, 255, 0.2) 0%, transparent 50%),
+          linear-gradient(170deg, #0a0515 0%, #0d0a1a 40%, #060818 100%);
+        animation: auroraPulse 12s ease-in-out infinite alternate;
+      }
+      @keyframes auroraPulse {
+        0% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.85;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
 
-  /* ===== GRID PATTERN ===== */
-  .grid-pattern {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1;
-    background-image:
-      linear-gradient(rgba(140, 80, 255, 0.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(140, 80, 255, 0.04) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
-    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
-  }
+      /* ===== GRID PATTERN ===== */
+      .grid-pattern {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image:
+          linear-gradient(rgba(140, 80, 255, 0.04) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(140, 80, 255, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 30%, black 20%, transparent 70%);
+      }
 
-  /* ===== FLOATING ORBS ===== */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(60px);
-    z-index: 1;
-    animation: orbFloat 8s ease-in-out infinite alternate;
-  }
-  .orb-1 {
-    width: 200px; height: 200px;
-    background: radial-gradient(circle, rgba(147, 51, 234, 0.5), transparent 70%);
-    top: -40px; right: 10%;
-    animation-duration: 10s;
-  }
-  .orb-2 {
-    width: 150px; height: 150px;
-    background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
-    top: 40%; left: -30px;
-    animation-duration: 7s;
-    animation-delay: -3s;
-  }
-  .orb-3 {
-    width: 180px; height: 180px;
-    background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%);
-    bottom: 5%; right: 5%;
-    animation-duration: 9s;
-    animation-delay: -5s;
-  }
-  .orb-4 {
-    width: 100px; height: 100px;
-    background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 70%);
-    top: 60%; left: 40%;
-    animation-duration: 6s;
-    animation-delay: -2s;
-  }
-  @keyframes orbFloat {
-    0% { transform: translate(0, 0) scale(1); }
-    33% { transform: translate(15px, -20px) scale(1.05); }
-    66% { transform: translate(-10px, 10px) scale(0.95); }
-    100% { transform: translate(20px, -15px) scale(1.02); }
-  }
+      /* ===== FLOATING ORBS ===== */
+      .orb {
+        position: fixed;
+        border-radius: 50%;
+        filter: blur(60px);
+        z-index: 1;
+        animation: orbFloat 8s ease-in-out infinite alternate;
+      }
+      .orb-1 {
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(147, 51, 234, 0.5), transparent 70%);
+        top: -40px;
+        right: 10%;
+        animation-duration: 10s;
+      }
+      .orb-2 {
+        width: 150px;
+        height: 150px;
+        background: radial-gradient(circle, rgba(59, 130, 246, 0.4), transparent 70%);
+        top: 40%;
+        left: -30px;
+        animation-duration: 7s;
+        animation-delay: -3s;
+      }
+      .orb-3 {
+        width: 180px;
+        height: 180px;
+        background: radial-gradient(circle, rgba(168, 85, 247, 0.35), transparent 70%);
+        bottom: 5%;
+        right: 5%;
+        animation-duration: 9s;
+        animation-delay: -5s;
+      }
+      .orb-4 {
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(236, 72, 153, 0.3), transparent 70%);
+        top: 60%;
+        left: 40%;
+        animation-duration: 6s;
+        animation-delay: -2s;
+      }
+      @keyframes orbFloat {
+        0% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(15px, -20px) scale(1.05);
+        }
+        66% {
+          transform: translate(-10px, 10px) scale(0.95);
+        }
+        100% {
+          transform: translate(20px, -15px) scale(1.02);
+        }
+      }
 
-  /* ===== PARTICLE DOTS ===== */
-  .particles {
-    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-    z-index: 1;
-    background-image:
-      radial-gradient(1.5px 1.5px at 10% 15%, rgba(168, 130, 255, 0.5) 50%, transparent 50%),
-      radial-gradient(1px 1px at 25% 35%, rgba(130, 170, 255, 0.4) 50%, transparent 50%),
-      radial-gradient(1.5px 1.5px at 40% 10%, rgba(200, 150, 255, 0.3) 50%, transparent 50%),
-      radial-gradient(1px 1px at 55% 45%, rgba(140, 180, 255, 0.4) 50%, transparent 50%),
-      radial-gradient(2px 2px at 70% 20%, rgba(180, 120, 255, 0.35) 50%, transparent 50%),
-      radial-gradient(1px 1px at 85% 55%, rgba(120, 160, 255, 0.3) 50%, transparent 50%),
-      radial-gradient(1.5px 1.5px at 15% 65%, rgba(160, 140, 255, 0.25) 50%, transparent 50%),
-      radial-gradient(1px 1px at 60% 75%, rgba(190, 130, 255, 0.3) 50%, transparent 50%),
-      radial-gradient(1.5px 1.5px at 90% 80%, rgba(140, 170, 255, 0.25) 50%, transparent 50%),
-      radial-gradient(1px 1px at 35% 85%, rgba(170, 140, 255, 0.3) 50%, transparent 50%),
-      radial-gradient(1px 1px at 75% 65%, rgba(150, 160, 255, 0.2) 50%, transparent 50%),
-      radial-gradient(1.5px 1.5px at 50% 30%, rgba(200, 160, 255, 0.25) 50%, transparent 50%);
-    animation: particleDrift 20s linear infinite;
-  }
-  @keyframes particleDrift {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-20px); }
-  }
+      /* ===== PARTICLE DOTS ===== */
+      .particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-image:
+          radial-gradient(1.5px 1.5px at 10% 15%, rgba(168, 130, 255, 0.5) 50%, transparent 50%),
+          radial-gradient(1px 1px at 25% 35%, rgba(130, 170, 255, 0.4) 50%, transparent 50%),
+          radial-gradient(1.5px 1.5px at 40% 10%, rgba(200, 150, 255, 0.3) 50%, transparent 50%),
+          radial-gradient(1px 1px at 55% 45%, rgba(140, 180, 255, 0.4) 50%, transparent 50%),
+          radial-gradient(2px 2px at 70% 20%, rgba(180, 120, 255, 0.35) 50%, transparent 50%),
+          radial-gradient(1px 1px at 85% 55%, rgba(120, 160, 255, 0.3) 50%, transparent 50%),
+          radial-gradient(1.5px 1.5px at 15% 65%, rgba(160, 140, 255, 0.25) 50%, transparent 50%),
+          radial-gradient(1px 1px at 60% 75%, rgba(190, 130, 255, 0.3) 50%, transparent 50%),
+          radial-gradient(1.5px 1.5px at 90% 80%, rgba(140, 170, 255, 0.25) 50%, transparent 50%),
+          radial-gradient(1px 1px at 35% 85%, rgba(170, 140, 255, 0.3) 50%, transparent 50%),
+          radial-gradient(1px 1px at 75% 65%, rgba(150, 160, 255, 0.2) 50%, transparent 50%),
+          radial-gradient(1.5px 1.5px at 50% 30%, rgba(200, 160, 255, 0.25) 50%, transparent 50%);
+        animation: particleDrift 20s linear infinite;
+      }
+      @keyframes particleDrift {
+        0% {
+          transform: translateY(0);
+        }
+        100% {
+          transform: translateY(-20px);
+        }
+      }
 
-  /* ===== CONTENT WRAPPER ===== */
-  .content {
-    position: relative;
-    z-index: 10;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 24px;
-  }
+      /* ===== CONTENT WRAPPER ===== */
+      .content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
 
-  /* ===== NAV ===== */
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 28px;
-    position: relative;
-    z-index: 10;
-    background: rgba(12, 8, 24, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(140, 80, 255, 0.15);
-  }
-  .logo {
-    font-size: 18px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.5px;
-  }
-  .logo span {
-    font-weight: 400;
-    -webkit-text-fill-color: rgba(200, 190, 230, 0.7);
-  }
-  .nav-links {
-    display: flex; gap: 20px; list-style: none; font-size: 13px; color: rgba(200, 190, 230, 0.7);
-    align-items: center; margin: 0; padding: 0;
-  }
-  .nav-cta {
-    font-size: 12px;
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid rgba(140, 80, 255, 0.4);
-    color: #c4b5fd;
-    background: rgba(140, 80, 255, 0.1);
-    text-decoration: none;
-    transition: all 0.3s;
-  }
-  .nav-cta:hover {
-    background: rgba(140, 80, 255, 0.25);
-    box-shadow: 0 0 20px rgba(140, 80, 255, 0.3);
-  }
+      /* ===== NAV ===== */
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 28px;
+        position: relative;
+        z-index: 10;
+        background: rgba(12, 8, 24, 0.6);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(140, 80, 255, 0.15);
+      }
+      .logo {
+        font-size: 18px;
+        font-weight: 800;
+        background: linear-gradient(135deg, #a78bfa, #818cf8, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -0.5px;
+      }
+      .logo span {
+        font-weight: 400;
+        -webkit-text-fill-color: rgba(200, 190, 230, 0.7);
+      }
+      .nav-links {
+        display: flex;
+        gap: 20px;
+        list-style: none;
+        font-size: 13px;
+        color: rgba(200, 190, 230, 0.7);
+        align-items: center;
+        margin: 0;
+        padding: 0;
+      }
+      .nav-cta {
+        font-size: 12px;
+        padding: 6px 16px;
+        border-radius: 20px;
+        border: 1px solid rgba(140, 80, 255, 0.4);
+        color: #c4b5fd;
+        background: rgba(140, 80, 255, 0.1);
+        text-decoration: none;
+        transition: all 0.3s;
+      }
+      .nav-cta:hover {
+        background: rgba(140, 80, 255, 0.25);
+        box-shadow: 0 0 20px rgba(140, 80, 255, 0.3);
+      }
 
-  /* ===== HERO ===== */
-  .hero {
-    text-align: center;
-    padding: 56px 20px 40px;
-  }
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 5px 14px;
-    border-radius: 20px;
-    background: rgba(140, 80, 255, 0.12);
-    border: 1px solid rgba(140, 80, 255, 0.25);
-    color: #c4b5fd;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-  }
-  .badge::before {
-    content: "✨ ";
-  }
-  .hero h1 {
-    font-size: 42px;
-    font-weight: 900;
-    line-height: 1.15;
-    letter-spacing: -1.5px;
-    margin-bottom: 16px;
-    background: linear-gradient(135deg, #ffffff 0%, #e0d0ff 25%, #a78bfa 50%, #818cf8 75%, #60a5fa 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradientShift 6s ease-in-out infinite;
-    background-size: 200% 200%;
-  }
-  @keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  .hero p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: rgba(200, 190, 230, 0.65);
-    max-width: 520px;
-    margin: 0 auto 28px;
-    font-weight: 300;
-  }
-  .hero-buttons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .btn-primary {
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 14px;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, #7c3aed, #6366f1, #3b82f6);
-    border-radius: 28px;
-    text-decoration: none;
-    position: relative;
-    box-shadow:
-      0 0 20px rgba(124, 58, 237, 0.4),
-      0 0 60px rgba(99, 102, 241, 0.15),
-      inset 0 1px 0 rgba(255,255,255,0.15);
-    animation: glowPulse 3s ease-in-out infinite;
-    border: none;
-    cursor: pointer;
-  }
-  @keyframes glowPulse {
-    0%, 100% { box-shadow: 0 0 20px rgba(124, 58, 237, 0.4), 0 0 60px rgba(99, 102, 241, 0.15); }
-    50% { box-shadow: 0 0 30px rgba(124, 58, 237, 0.6), 0 0 80px rgba(99, 102, 241, 0.25); }
-  }
-  .btn-secondary {
-    display: inline-block;
-    padding: 12px 28px;
-    font-size: 14px;
-    font-weight: 500;
-    color: #c4b5fd;
-    background: rgba(140, 80, 255, 0.08);
-    border: 1px solid rgba(140, 80, 255, 0.3);
-    border-radius: 28px;
-    text-decoration: none;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-  }
+      /* ===== HERO ===== */
+      .hero {
+        text-align: center;
+        padding: 56px 20px 40px;
+      }
+      .badge {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 5px 14px;
+        border-radius: 20px;
+        background: rgba(140, 80, 255, 0.12);
+        border: 1px solid rgba(140, 80, 255, 0.25);
+        color: #c4b5fd;
+        margin-bottom: 20px;
+        letter-spacing: 0.5px;
+      }
+      .badge::before {
+        content: "✨ ";
+      }
+      .hero h1 {
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1.15;
+        letter-spacing: -1.5px;
+        margin-bottom: 16px;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #e0d0ff 25%,
+          #a78bfa 50%,
+          #818cf8 75%,
+          #60a5fa 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientShift 6s ease-in-out infinite;
+        background-size: 200% 200%;
+      }
+      @keyframes gradientShift {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .hero p {
+        font-size: 15px;
+        line-height: 1.7;
+        color: rgba(200, 190, 230, 0.65);
+        max-width: 520px;
+        margin: 0 auto 28px;
+        font-weight: 300;
+      }
+      .hero-buttons {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-primary {
+        display: inline-block;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+        background: linear-gradient(135deg, #7c3aed, #6366f1, #3b82f6);
+        border-radius: 28px;
+        text-decoration: none;
+        position: relative;
+        box-shadow:
+          0 0 20px rgba(124, 58, 237, 0.4),
+          0 0 60px rgba(99, 102, 241, 0.15),
+          inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        animation: glowPulse 3s ease-in-out infinite;
+        border: none;
+        cursor: pointer;
+      }
+      @keyframes glowPulse {
+        0%,
+        100% {
+          box-shadow:
+            0 0 20px rgba(124, 58, 237, 0.4),
+            0 0 60px rgba(99, 102, 241, 0.15);
+        }
+        50% {
+          box-shadow:
+            0 0 30px rgba(124, 58, 237, 0.6),
+            0 0 80px rgba(99, 102, 241, 0.25);
+        }
+      }
+      .btn-secondary {
+        display: inline-block;
+        padding: 12px 28px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #c4b5fd;
+        background: rgba(140, 80, 255, 0.08);
+        border: 1px solid rgba(140, 80, 255, 0.3);
+        border-radius: 28px;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
 
-  /* ===== TRUSTED BY ===== */
-  .trusted {
-    text-align: center;
-    padding: 32px 20px 10px;
-  }
-  .trusted p {
-    font-size: 11px;
-    color: rgba(200, 190, 230, 0.35);
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 500;
-  }
-  .logo-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .fake-logo {
-    width: 32px; height: 32px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, rgba(140, 80, 255, 0.15), rgba(60, 130, 246, 0.15));
-    border: 1px solid rgba(140, 80, 255, 0.12);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 700;
-    color: rgba(180, 160, 240, 0.4);
-  }
+      /* ===== TRUSTED BY ===== */
+      .trusted {
+        text-align: center;
+        padding: 32px 20px 10px;
+      }
+      .trusted p {
+        font-size: 11px;
+        color: rgba(200, 190, 230, 0.35);
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 500;
+      }
+      .logo-row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+      .fake-logo {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(140, 80, 255, 0.15), rgba(60, 130, 246, 0.15));
+        border: 1px solid rgba(140, 80, 255, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 700;
+        color: rgba(180, 160, 240, 0.4);
+      }
 
-  /* ===== FEATURES ===== */
-  .features {
-    padding: 36px 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-  }
-  .feature-card {
-    position: relative;
-    padding: 24px 18px;
-    border-left: 3px solid rgba(140, 80, 255, 0.4);
-    border-radius: 20px;
-    background: rgba(20, 14, 40, 0.5);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(140, 80, 255, 0.12);
-    overflow: hidden;
-    transition: all 0.4s;
-  }
-  .feature-card:hover {
-    border-color: rgba(140, 80, 255, 0.3);
-    box-shadow: 0 0 30px rgba(140, 80, 255, 0.1);
-    transform: translateY(-2px);
-  }
-  /* Animated gradient border on hover via pseudo-element */
-  .feature-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px; bottom: -1px;
-    border-radius: 20px;
-    background: linear-gradient(135deg, rgba(147, 51, 234, 0.3), rgba(59, 130, 246, 0.3), rgba(236, 72, 153, 0.3), rgba(147, 51, 234, 0.3));
-    background-size: 300% 300%;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.4s;
-    animation: borderGradient 4s ease infinite;
-  }
-  .feature-card:hover::before {
-    opacity: 1;
-  }
-  @keyframes borderGradient {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-  .feature-icon {
-    width: 36px; height: 36px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(99, 102, 241, 0.2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    margin-bottom: 14px;
-    border: 1px solid rgba(140, 80, 255, 0.15);
-  }
-  .feature-card h3 {
-    font-size: 14px;
-    font-weight: 700;
-    margin-bottom: 8px;
-    background: linear-gradient(135deg, #e0d0ff, #a5b4fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .feature-card p {
-    font-size: 12px;
-    line-height: 1.65;
-    color: rgba(200, 190, 230, 0.5);
-    font-weight: 300;
-  }
+      /* ===== FEATURES ===== */
+      .features {
+        padding: 36px 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .feature-card {
+        position: relative;
+        padding: 24px 18px;
+        border-left: 3px solid rgba(140, 80, 255, 0.4);
+        border-radius: 20px;
+        background: rgba(20, 14, 40, 0.5);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(140, 80, 255, 0.12);
+        overflow: hidden;
+        transition: all 0.4s;
+      }
+      .feature-card:hover {
+        border-color: rgba(140, 80, 255, 0.3);
+        box-shadow: 0 0 30px rgba(140, 80, 255, 0.1);
+        transform: translateY(-2px);
+      }
+      /* Animated gradient border on hover via pseudo-element */
+      .feature-card::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: -1px;
+        right: -1px;
+        bottom: -1px;
+        border-radius: 20px;
+        background: linear-gradient(
+          135deg,
+          rgba(147, 51, 234, 0.3),
+          rgba(59, 130, 246, 0.3),
+          rgba(236, 72, 153, 0.3),
+          rgba(147, 51, 234, 0.3)
+        );
+        background-size: 300% 300%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.4s;
+        animation: borderGradient 4s ease infinite;
+      }
+      .feature-card:hover::before {
+        opacity: 1;
+      }
+      @keyframes borderGradient {
+        0%,
+        100% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+      }
+      .feature-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 12px;
+        background: linear-gradient(135deg, rgba(124, 58, 237, 0.25), rgba(99, 102, 241, 0.2));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        margin-bottom: 14px;
+        border: 1px solid rgba(140, 80, 255, 0.15);
+      }
+      .feature-card h3 {
+        font-size: 14px;
+        font-weight: 700;
+        margin-bottom: 8px;
+        background: linear-gradient(135deg, #e0d0ff, #a5b4fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .feature-card p {
+        font-size: 12px;
+        line-height: 1.65;
+        color: rgba(200, 190, 230, 0.5);
+        font-weight: 300;
+      }
 
-  /* ===== BOTTOM CTA ===== */
-  .bottom-cta {
-    text-align: center;
-    padding: 20px 20px 48px;
-  }
-  .bottom-cta h2 {
-    font-size: 24px;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    margin-bottom: 10px;
-    background: linear-gradient(135deg, #e0d0ff, #818cf8, #60a5fa);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-  .bottom-cta p {
-    font-size: 13px;
-    color: rgba(200, 190, 230, 0.45);
-    margin-bottom: 20px;
-  }
+      /* ===== BOTTOM CTA ===== */
+      .bottom-cta {
+        text-align: center;
+        padding: 20px 20px 48px;
+      }
+      .bottom-cta h2 {
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        margin-bottom: 10px;
+        background: linear-gradient(135deg, #e0d0ff, #818cf8, #60a5fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .bottom-cta p {
+        font-size: 13px;
+        color: rgba(200, 190, 230, 0.45);
+        margin-bottom: 20px;
+      }
 
-  /* ===== FOOTER ===== */
-  footer {
-    text-align: center;
-    padding: 16px;
-    font-size: 10px;
-    color: rgba(200, 190, 230, 0.2);
-    border-top: 1px solid rgba(140, 80, 255, 0.08);
-    position: relative;
-    z-index: 10;
-  }
-</style>
-</head>
-<body>
+      /* ===== FOOTER ===== */
+      footer {
+        text-align: center;
+        padding: 16px;
+        font-size: 10px;
+        color: rgba(200, 190, 230, 0.2);
+        border-top: 1px solid rgba(140, 80, 255, 0.08);
+        position: relative;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background layers -->
+    <div class="aurora-bg"></div>
+    <div class="grid-pattern"></div>
+    <div class="particles"></div>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
 
-<!-- Background layers -->
-<div class="aurora-bg"></div>
-<div class="grid-pattern"></div>
-<div class="particles"></div>
-<div class="orb orb-1"></div>
-<div class="orb orb-2"></div>
-<div class="orb orb-3"></div>
-<div class="orb orb-4"></div>
+    <!-- Nav -->
+    <nav>
+      <div class="logo">NexusAI<span>.pro</span></div>
+      <ul class="nav-links">
+        <li>Products</li>
+        <li>Solutions</li>
+        <li>Pricing</li>
+        <li>Docs</li>
+      </ul>
+      <a href="#" class="nav-cta">Get Started →</a>
+    </nav>
 
-<!-- Nav -->
-<nav>
-  <div class="logo">NexusAI<span>.pro</span></div>
-  <ul class="nav-links">
-    <li>Products</li>
-    <li>Solutions</li>
-    <li>Pricing</li>
-    <li>Docs</li>
-  </ul>
-  <a href="#" class="nav-cta">Get Started →</a>
-</nav>
+    <div class="content">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="badge">NEW — AI Agent Capabilities Now Live</div>
+        <h1>Redefine Intelligent Workflows<br />with the Next-Gen AI Platform</h1>
+        <p>
+          Built on multimodal LLMs deeply fused with RAG, NexusAI delivers end-to-end Agentic
+          Workflow orchestration for enterprises, powering AI-Native transformation across every
+          scenario and every decision.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="btn-primary">🚀 Get Started Free</a>
+          <a href="#" class="btn-secondary">Book a Demo</a>
+        </div>
+      </section>
 
-<div class="content">
+      <!-- Trusted by -->
+      <section class="trusted">
+        <p>Trusted by 10,000+ enterprises worldwide to power business growth</p>
+        <div class="logo-row">
+          <div class="fake-logo">A</div>
+          <div class="fake-logo">B</div>
+          <div class="fake-logo">C</div>
+          <div class="fake-logo">D</div>
+          <div class="fake-logo">E</div>
+          <div class="fake-logo">F</div>
+          <div class="fake-logo">G</div>
+          <div class="fake-logo">H</div>
+        </div>
+      </section>
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="badge">NEW — AI Agent Capabilities Now Live</div>
-    <h1>Redefine Intelligent Workflows<br>with the Next-Gen AI Platform</h1>
-    <p>
-      Built on multimodal LLMs deeply fused with RAG, NexusAI delivers end-to-end Agentic Workflow orchestration for enterprises, powering AI-Native transformation across every scenario and every decision.
-    </p>
-    <div class="hero-buttons">
-      <a href="#" class="btn-primary">🚀 Get Started Free</a>
-      <a href="#" class="btn-secondary">Book a Demo</a>
+      <!-- Features -->
+      <section class="features">
+        <div class="feature-card">
+          <div class="feature-icon">🧠</div>
+          <h3>AI-Powered Smart Orchestration</h3>
+          <p>
+            An adaptive workflow engine built on Transformer architecture that autonomously plans
+            and executes tasks — no human intervention required.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Multimodal RAG Fusion</h3>
+          <p>
+            Proprietary vector-based retrieval-augmented generation that breaks through text, image,
+            and audio-video knowledge silos — so AI truly understands your data.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🔮</div>
+          <h3>Enterprise-Ready Agents</h3>
+          <p>
+            Out-of-the-box Agent ecosystem — from data insights to intelligent decisions, fully
+            AI-Native across the entire pipeline, empowering organizations to cut costs and boost
+            efficiency.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3>Full-Scenario Copilot Matrix</h3>
+          <p>
+            AI Copilots spanning 200+ scenarios across R&D, marketing, support, and HR — plug in
+            with one click and instantly 10x your team's productivity.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🛡️</div>
+          <h3>Trusted AI Security Foundation</h3>
+          <p>
+            SOC 2 Type II certified, with private deployment and data that never leaves your domain.
+            Responsible AI you can trust.
+          </p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>AI-Driven Insights</h3>
+          <p>
+            Real-time business panorama with conversational natural-language analytics — making
+            everyone a data scientist. No-Code, Pro-Result.
+          </p>
+        </div>
+      </section>
+
+      <!-- Bottom CTA -->
+      <section class="bottom-cta">
+        <h2>Begin Your AI-Native Journey</h2>
+        <p>Join 10,000+ pioneering enterprises and let AI reshape your business boundaries</p>
+        <a href="#" class="btn-primary">✨ Start Free Trial</a>
+      </section>
     </div>
-  </section>
 
-  <!-- Trusted by -->
-  <section class="trusted">
-    <p>Trusted by 10,000+ enterprises worldwide to power business growth</p>
-    <div class="logo-row">
-      <div class="fake-logo">A</div>
-      <div class="fake-logo">B</div>
-      <div class="fake-logo">C</div>
-      <div class="fake-logo">D</div>
-      <div class="fake-logo">E</div>
-      <div class="fake-logo">F</div>
-      <div class="fake-logo">G</div>
-      <div class="fake-logo">H</div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section class="features">
-    <div class="feature-card">
-      <div class="feature-icon">🧠</div>
-      <h3>AI-Powered Smart Orchestration</h3>
-      <p>An adaptive workflow engine built on Transformer architecture that autonomously plans and executes tasks — no human intervention required.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">⚡</div>
-      <h3>Multimodal RAG Fusion</h3>
-      <p>Proprietary vector-based retrieval-augmented generation that breaks through text, image, and audio-video knowledge silos — so AI truly understands your data.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🔮</div>
-      <h3>Enterprise-Ready Agents</h3>
-      <p>Out-of-the-box Agent ecosystem — from data insights to intelligent decisions, fully AI-Native across the entire pipeline, empowering organizations to cut costs and boost efficiency.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🌐</div>
-      <h3>Full-Scenario Copilot Matrix</h3>
-      <p>AI Copilots spanning 200+ scenarios across R&D, marketing, support, and HR — plug in with one click and instantly 10x your team's productivity.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">🛡️</div>
-      <h3>Trusted AI Security Foundation</h3>
-      <p>SOC 2 Type II certified, with private deployment and data that never leaves your domain. Responsible AI you can trust.</p>
-    </div>
-    <div class="feature-card">
-      <div class="feature-icon">📊</div>
-      <h3>AI-Driven Insights</h3>
-      <p>Real-time business panorama with conversational natural-language analytics — making everyone a data scientist. No-Code, Pro-Result.</p>
-    </div>
-  </section>
-
-  <!-- Bottom CTA -->
-  <section class="bottom-cta">
-    <h2>Begin Your AI-Native Journey</h2>
-    <p>Join 10,000+ pioneering enterprises and let AI reshape your business boundaries</p>
-    <a href="#" class="btn-primary">✨ Start Free Trial</a>
-  </section>
-
-</div>
-
-<footer>
-  © 2026 NexusAI, Inc. &nbsp;·&nbsp; All rights reserved. &nbsp;·&nbsp; AI for Everyone, Everywhere.™
-</footer>
-
-</body>
+    <footer>
+      © 2026 NexusAI, Inc. &nbsp;·&nbsp; All rights reserved. &nbsp;·&nbsp; AI for Everyone,
+      Everywhere.™
+    </footer>
+  </body>
 </html>
