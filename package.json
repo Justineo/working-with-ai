@@ -9,7 +9,7 @@
     "preview": "vp preview"
   },
   "dependencies": {
-    "@lobehub/icons": "^5.23.0",
+    "@lobehub/icons": "^5.23.1",
     "@lobehub/icons-static-svg": "^1.95.1"
   },
   "devDependencies": {
