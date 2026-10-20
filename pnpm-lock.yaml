@@ -167,7 +167,7 @@ importers:
   .:
     dependencies:
       '@lobehub/icons':
-        specifier: ^5.23.0
+        specifier: ^5.23.1
         version: 5.23.1(@lobehub/ui@5.64.4)(@types/react@19.2.14)(antd@6.3.4(react-dom@19.2.4(react@19.2.4))(react@19.2.4))(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
       '@lobehub/icons-static-svg':
         specifier: ^1.95.1
