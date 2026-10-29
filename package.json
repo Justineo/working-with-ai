@@ -10,14 +10,14 @@
   },
   "dependencies": {
     "@lobehub/icons": "^5.23.0",
-    "@lobehub/icons-static-svg": "^1.95.1"
+    "@lobehub/icons-static-svg": "^1.98.0"
   },
   "devDependencies": {
     "typescript": "~7.0.2",
     "vite": "npm:@voidzero-dev/vite-plus-core@latest",
     "vite-plus": "latest"
   },
-  "packageManager": "pnpm@12.11.1",
+  "packageManager": "pnpm@12.15.0",
   "pnpm": {
     "overrides": {
       "vite": "npm:@voidzero-dev/vite-plus-core@latest",
